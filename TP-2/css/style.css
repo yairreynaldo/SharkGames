@@ -1,0 +1,186 @@
+/* HOME */
+body{
+    background-color: #1C2C46;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* CARROUSEL */
+
+.carrusel{
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.itemCarrusel {
+    display: grid;
+    grid-template-areas: "j1" "j2" "j3" "j4" "j5" "j6";
+    grid-template-columns: auto auto auto auto auto auto;
+    height: 100%;
+}
+
+.flechasCarrusel{
+    top: 0;
+    height: 90%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.card{
+    height: 300px;
+    width: 100%;
+    margin: 15px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.j1{
+    grid: j1;
+}
+
+.j2{
+    grid: j2;
+}
+
+.j3{
+    grid: j3;
+}
+
+.j4{
+    grid: j4;
+}
+
+.j5{
+    grid: j5;
+    display: none;
+}
+
+.j6{
+    grid: j6;
+    display: none;
+}
+
+h2{
+    color: white;
+}
+
+h4{
+    display: none;
+}
+
+p{
+    display: none;
+}
+
+.card:hover h4{
+    animation-name: fadeIn;
+    display: block;
+}
+.card:hover p{
+    animation-name: fadeIn;
+    display: block;
+}
+
+.card img{
+    width: 150px;
+    height: 150px;
+}
+
+.card:hover img{
+    width: 200px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+footer{
+    border: 1px solid black;
+}
+
+nav{
+    background-color: black;
+    color: white;
+}
+
+/* 4 EN LINEA */
+h1{
+    color: white;
+    border: 1px solid black;
+    padding-left: 250px;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 70% auto;
+    margin: 20px;
+    border: 3px solid fuchsia;
+    height: 500px;
+}
+
+.portada{
+    padding-left: 50px;
+}
+
+.subtitulo{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.subtituloJuego h2{
+    color: black;
+}
+
+.subtitulo h2{
+    text-transform: uppercase;
+}
+
+
+.imagen img{
+    width: 90%;
+    height: 380px;
+}
+
+.videos{    
+    margin-top: 20px;
+}
+.video img{
+    height: 200px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+
+.iconos{
+    background-color: rgba(128, 128, 128, 0.2);
+    width: 90%;
+    height: 35px;
+    border: solid 1px black;
+    display: flex;
+}
+
+.icono1{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icono2{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
