@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    color: white;
 }
 
 main {
@@ -100,8 +101,28 @@ footer {
     right: 0;
     background-color: #191721;
     width: 205px;
-    height: 451px;
+    height: 427px;
     margin-top: 5px;
+    /* display: grid;
+    grid-auto-rows: max-content; */
+}
+
+.menu-item {
+    height: 36px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.menu-item h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.menu-item-cruz {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
 }
 
 .active {
@@ -132,6 +153,7 @@ footer {
     /* position: relative; */
     display: flex;
     flex-direction: column;
+    /* overflow-x: auto; */
 }
 
 .itemCarrusel {
