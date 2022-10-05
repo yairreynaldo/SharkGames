@@ -1,7 +1,7 @@
  "use strict";
  document.addEventListener("DOMContentLoaded", () => {
 
-     const menu = document.querySelector(".menu");
+     const menu = document.querySelector(".menu-burguer");
      document.querySelector(".burguer").addEventListener("click", (e) => {
          menu.classList.toggle("active");
      });
