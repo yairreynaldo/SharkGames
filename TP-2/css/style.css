@@ -190,11 +190,19 @@ h2 {
     color: white;
 }
 
+<<<<<<< HEAD
 .card h4 {
     display: none;
 }
 
 .card p {
+=======
+.card h4{
+    display: none;
+}
+
+.card p{
+>>>>>>> 055f08e01c40d1fb0e56bde7df5b6be9abcc75f3
     display: none;
 }
 
@@ -221,6 +229,7 @@ h2 {
     transition: 0.5s;
 }
 
+<<<<<<< HEAD
 
 /* 4 EN LINEA */
 
@@ -292,4 +301,13 @@ h1 {
     width: 100%;
     justify-content: flex-end;
     align-items: center;
+=======
+footer{
+    border: 1px solid black;
+}
+
+nav{
+    background-color: black;
+    color: white;
+>>>>>>> 055f08e01c40d1fb0e56bde7df5b6be9abcc75f3
 }

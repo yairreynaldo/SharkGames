@@ -1,0 +1,191 @@
+/* 4 EN LINEA */
+body{
+    background-color: #1C2C46;
+}
+
+h1{
+    color: white;
+    padding-left: 250px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 70% auto;
+    margin: 20px;
+    height: 500px;
+}
+
+.portada{
+    padding-left: 50px;
+}
+
+.subtitulo{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.subtituloJuego h2{
+    color: black;
+}
+
+.subtitulo .vs{
+    padding-top: 25px;
+}
+
+.subtituloJuego h2 span img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+}
+
+.subtitulo h2{
+    text-transform: uppercase;
+}
+
+.imagen img{
+    width: 90%;
+    height: 380px;
+}
+
+.videos{    
+    margin-top: 20px;
+}
+.video img{
+    height: 210px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+
+.iconos{
+    background-color: rgba(128, 128, 128, 0.2);
+    width: 90%;
+    height: 35px;
+    border: solid 1px black;
+    display: flex;
+}
+
+.icono1{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icono2{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.breadcrumb{
+    display: grid;
+    grid-template-columns: 150px 100px 150px 100px 150px;
+    margin: 20px;
+    height: 100px;
+    padding-left: 80px;
+}
+
+.breadcrumb h2{
+    text-decoration: underline;
+    color: rgba(187, 187, 187, 1);
+}
+
+.informacion{
+    display: grid;
+    grid-template-rows: auto auto;
+    margin: 20px 80px;
+    height: 450px;
+    width: 700px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.informacion h2{
+    color: black;
+}
+
+.informacion h3{
+    color: white;
+}
+
+.cajaComentarios{
+    display: grid;
+    grid-template-columns: 50% auto;
+    margin: 20px;
+    height: 450px;
+}
+
+.comentar{
+    display: grid;
+    grid-template-rows: 20% auto 10%;
+}
+
+.tituloComentar{
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.escribirComent{
+    display: flex;
+    justify-content: center;
+}
+
+.escribirComent input{
+    background-color: rgba(140, 154, 175, 1);
+    width: 80%;
+    height: 250px;
+    border-radius: 40px;
+    text-align: center;
+    text-decoration: rgba(0, 0, 0, 0.6);
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+}
+
+.boton button{
+    background-color: rgba(77, 118, 45, 1);
+    width: 200px;
+}
+
+.comentarios{
+    display: grid;
+    grid-template-rows: 20% auto;
+}
+
+.tituloComentario{
+    background-color: rgba(217, 217, 217, 0.5);
+    text-transform: uppercase;
+}
+
+.tituloComentario h1{
+    padding-left: 200px;
+}
+
+.comentarios .coments{
+    background-color: rgba(217, 217, 217, 0.2);
+    padding-left: 20px;
+    height: 360px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.comentarios .coments h3 span{
+    color: white;
+}
+
+.comentarios .puntaje{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.comentarios .puntaje h3{
+    padding-right: 50px;
+}
