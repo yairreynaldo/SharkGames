@@ -6,400 +6,539 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="js/main.js"></script>
     <title>Interfaces TP2</title>
 </head>
 
 <body>
-    <header>
-        <div class="logYser">
-            <div class="logo">
-                <a href="lanzamiento.html"><img src="img/sharklogo.png" alt="" srcset=""></a>
-                <h3>Shark <br> Games</h3>
-            </div>
-            <div class="search">
-                <iconify-icon icon="ant-design:search-outlined" style="color: white;" width="30" height="30"></iconify-icon>
-                <input type="search" name="" id="" placeholder="   Busca Juegos y mas...">
-            </div>
-        </div>
-        <div class="menus">
-            <h4>yair_18</h4>
-            <img class="fotoperfil" src="img/FOTO_DE_PERFIL_MARIO.png" alt="">
-            <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            <iconify-icon class="burguer" id="bur" icon="ci:hamburger" width="30" height="30"></iconify-icon>
-        </div>
-    </header>
-    <main>
-        <ul class="menu-burguer">
-            <li class="menu-item">
-                <h3>Accion</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <h3>Aventuras</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <h3>Coches</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <h3>Deportes</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <h3>Estrategia</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <h3>Gratis</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <h3>Multijugaor</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <h3>Puzzle</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <h3>Terror</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item">
-                <h3>Tiros</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="menu-item-cruz">
-                <iconify-icon class="cruz" icon="ant-design:close-outlined" width="40" height="40"></iconify-icon>
-            </li>
-        </ul>
 
-        <ul class="menu-perfil">
-            <li class="perfil-item">
-                <h3>Accion</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="perfil-item">
-                <h3>Aventuras</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="perfil-item">
-                <h3>Coches</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="perfil-item">
-                <h3>Deportes</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="redes-item">
-                <h3>Estrategia</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-            <hr>
-            <li class="perfil-item">
-                <h3>Gratis</h3>
-                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
-            </li>
-        </ul>
+    <div id="spinner">
+        <div class="loading-spin"></div>
+        <div class="numero-carga">0%</div>
+    </div>
 
-        <div class="carrusel">
-            <h2>Recomendados:</h2>
-            <div class="itemCarrusel">
-                <div class="card j1">
-                    <img src="img/fifa23.jpg">
-                    <div class="descripcion">
-                        <h4 class="titulo">Fifa 23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                    <button class="btn-comprar">COMPRAR</button>
+    <div class="contenido">
+        
+        <header>
+            <div class="logYser">
+                <div class="logo">
+                    <a href="lanzamiento.html"><img src="img/sharklogo.png" alt="" srcset=""></a>
+                    <h3>Shark <br> Games</h3>
                 </div>
-                <div class="card j2">
-                    <img src="img/gran_turismo7.jpg">
-                    <div class="descripcion">
-                        <h4>Gran Turismo 7</h4>
-                        <p>$5000.00</p>
+                <div class="search">
+                    <iconify-icon icon="ant-design:search-outlined" style="color: white;" width="30" height="30"></iconify-icon>
+                    <input type="search" name="" id="" placeholder="   Busca Juegos y mas...">
+                </div>
+            </div>
+            <div class="menus">
+                <h4>yair_18</h4>
+                <img class="fotoperfil" src="img/FOTO_DE_PERFIL_MARIO.png" alt="">
+                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
+                <iconify-icon class="burguer" id="bur" icon="ci:hamburger" width="30" height="30"></iconify-icon>
+            </div>
+        </header>
+    
+        <main id="main">
+            <ul class="menu-burguer">
+                <li class="menu-item">
+                    <h3>Accion</h3>
+                    <iconify-icon icon="akar-icons:fire" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <h3>Aventuras</h3>
+                    <iconify-icon icon="icons8:adventures" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <h3>Coches</h3>
+                    <iconify-icon icon="carbon:car" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <h3>Deportes</h3>
+                    <iconify-icon icon="fa-solid:basketball-ball" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <h3>Estrategia</h3>
+                    <iconify-icon icon="mdi:strategy" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <h3>Gratis</h3>
+                    <iconify-icon icon="emojione-monotone:free-button" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <h3>Multijugaor</h3>
+                    <iconify-icon icon="bx:user" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <h3>Puzzle</h3>
+                    <iconify-icon icon="bi:puzzle" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <h3>Terror</h3>
+                    <iconify-icon icon="fluent-emoji-high-contrast:face-screaming-in-fear" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item">
+                    <h3>Tiros</h3>
+                    <iconify-icon icon="eos-icons:troubleshooting" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="menu-item-cruz">
+                    <iconify-icon class="cruz" icon="ant-design:close-outlined" width="40" height="40"></iconify-icon>
+                </li>
+            </ul>
+    
+            <ul class="menu-perfil">
+                <li class="perfil-item">
+                    <h3>Mi Perfil</h3>
+                    <iconify-icon icon="bx:user" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="perfil-item">
+                    <h3>Pagos</h3>
+                    <iconify-icon icon="ant-design:credit-card-filled" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="perfil-item">
+                    <h3>Amigos</h3>
+                    <iconify-icon icon="bx:user" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="perfil-item">
+                    <h3>Ajustes</h3>
+                    <iconify-icon icon="ci:settings-filled" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="redes-item">
+                    <iconify-icon icon="akar-icons:instagram-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <iconify-icon icon="akar-icons:facebook-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <iconify-icon icon="akar-icons:twitter-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="perfil-item">
+                    <h3>LogOut</h3>
+                    <iconify-icon icon="carbon:logout" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+            </ul>
+    
+            <div class="cars">
+                <div class="carrusel">
+                    <h2>Recomendados:</h2>
+                    <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <div class="itemCarrusel">
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card j3">
-                    <img src="img/valhalla.jpg">
-                    <div class="descripcion">
-                        <h4>Assasin's Creed: Valhalla</h4>
-                        <p>$5000.00</p>
+                <div class="carrusel">
+                    <h2>Recomendados:</h2>
+                    <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <div class="itemCarrusel">
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card j4">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
+                <div class="carrusel">
+                    <h2>Recomendados:</h2>
+                    <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <div class="itemCarrusel">
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card j5">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
+                <div class="carrusel">
+                    <h2>Recomendados:</h2>
+                    <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <div class="itemCarrusel">
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card j6">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
+                <div class="carrusel">
+                    <h2>Recomendados:</h2>
+                    <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
+                    <div class="itemCarrusel">
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                        <div class="card">
+                            <img src="img/fifa23.jpg">
+                            <div class="descripcion">
+                                <h4 class="titulo">Fifa 23</h4>
+                                <p>$5000.00</p>
+                            </div>
+                            <button class="btn-comprar">COMPRAR</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <h2>Recomendados:</h2>
-            <div class="itemCarrusel">
-                <div class="card j1">
-                    <img src="img/fifa23.jpg">
-                    <div class="descripcion">
-                        <h4 class="titulo">Fifa 23</h4>
-                        <p>$5000.00</p>
-                    </div>
+        </main>
+        <footer>
+            <div class="redes">
+                <div class="redes-item-footer">
+                    <img src="img/sharklogo.png" alt="" srcset="">
+                    <h3>SharkGames.com</h3>
                 </div>
-                <div class="card j2">
-                    <img src="img/gran_turismo7.jpg">
-                    <div class="descripcion">
-                        <h4>Gran Turismo 7</h4>
-                        <p>$5000.00</p>
-                    </div>
+                <div class="redes-item-footer">
+                    <iconify-icon icon="akar-icons:instagram-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <h3>Instagram</h3>
                 </div>
-                <div class="card j3">
-                    <img src="img/valhalla.jpg">
-                    <div class="descripcion">
-                        <h4>Assasin's Creed: Valhalla</h4>
-                        <p>$5000.00</p>
-                    </div>
+                <div class="redes-item-footer">
+                    <iconify-icon icon="akar-icons:facebook-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <h3>Facebook</h3>
                 </div>
-                <div class="card j4">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
+                <div class="redes-item-footer">
+                    <iconify-icon icon="akar-icons:twitter-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <h3>Twitter</h3>
                 </div>
-                <div class="card j5">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j6">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
+                <div class="copir">
+                    <p>Copyright © 2022 SHARK GAMES Todos los derechos reservados.</p>
                 </div>
             </div>
-            <h2>Recomendados:</h2>
-            <div class="itemCarrusel">
-                <div class="card j1">
-                    <img src="img/fifa23.jpg">
-                    <div class="descripcion">
-                        <h4 class="titulo">Fifa 23</h4>
-                        <p>$5000.00</p>
-                    </div>
+            <div class="informacion">
+                <div class="info-item">
+                    <h3>INFORMACION</h3>
+                    <p>Condiciondes de uso</p>
+                    <p>Politicas de Privacidad</p>
+                    <p>Informacion para Padres</p>
+                    <p>Cookies</p>
                 </div>
-                <div class="card j2">
-                    <img src="img/gran_turismo7.jpg">
-                    <div class="descripcion">
-                        <h4>Gran Turismo 7</h4>
-                        <p>$5000.00</p>
-                    </div>
+                <div class="info-item">
+                    <h3>ASISTENCIA</h3>
+                    <p>Ayuda</p>
+                    <p>FAQ</p>
                 </div>
-                <div class="card j3">
-                    <img src="img/valhalla.jpg">
-                    <div class="descripcion">
-                        <h4>Assasin's Creed: Valhalla</h4>
-                        <p>$5000.00</p>
-                    </div>
+                <div class="info-item">
+                    <h3>NOSOTROS</h3>
+                    <p>Acerca de</p>
+                    <p>Desarrolladores</p>
+                    <p>Empleo</p>
+                    <p>Contacto</p>
                 </div>
-                <div class="card j4">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j5">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j6">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
+                <div class="info-item">
+                    <h3>IDIOMAS</h3>
+                    <p>Español</p>
+                    <p>English</p>
+                    <p>Deutsch</p>
+                    <p>Italiano</p>
+                    <p>Français</p>
+                    <p>Polski</p>
                 </div>
             </div>
-            <h2>Recomendados:</h2>
-            <div class="itemCarrusel">
-                <div class="card j1">
-                    <img src="img/fifa23.jpg">
-                    <div class="descripcion">
-                        <h4 class="titulo">Fifa 23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j2">
-                    <img src="img/gran_turismo7.jpg">
-                    <div class="descripcion">
-                        <h4>Gran Turismo 7</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j3">
-                    <img src="img/valhalla.jpg">
-                    <div class="descripcion">
-                        <h4>Assasin's Creed: Valhalla</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j4">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j5">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j6">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-            </div>
-            <h2>Recomendados:</h2>
-            <div class="itemCarrusel">
-                <div class="card j1">
-                    <img src="img/fifa23.jpg">
-                    <div class="descripcion">
-                        <h4 class="titulo">Fifa 23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j2">
-                    <img src="img/gran_turismo7.jpg">
-                    <div class="descripcion">
-                        <h4>Gran Turismo 7</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j3">
-                    <img src="img/valhalla.jpg">
-                    <div class="descripcion">
-                        <h4>Assasin's Creed: Valhalla</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j4">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j5">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-                <div class="card j6">
-                    <img src="img/nba2k23.jpg">
-                    <div class="descripcion">
-                        <h4>NBA 2K23</h4>
-                        <p>$5000.00</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="redes">
-            <div class="redes-item-footer">
-                <img src="img/sharklogo.png" alt="" srcset="">
-                <h3>SharkGames.com</h3>
-            </div>
-            <div class="redes-item-footer">
-                <iconify-icon icon="akar-icons:instagram-fill" style="color: white;" width="30" height="30"></iconify-icon>
-                <h3>Instagram</h3>
-            </div>
-            <div class="redes-item-footer">
-                <iconify-icon icon="akar-icons:facebook-fill" style="color: white;" width="30" height="30"></iconify-icon>
-                <h3>Facebook</h3>
-            </div>
-            <div class="redes-item-footer">
-                <iconify-icon icon="akar-icons:twitter-fill" style="color: white;" width="30" height="30"></iconify-icon>
-                <h3>Twitter</h3>
-            </div>
-            <div class="copir">
-                <h4>Copyright © 2022 SHARK GAMES Todos los derechos reservados.</h4>
-            </div>
-        </div>
-        <div class="informacion">
-            <div class="info-item">
-                <h3>INFORMACION</h3>
-                <h4>Condiciondes de uso</h4>
-                <h4>Condiciondes de uso</h4>
-                <h4>Condiciondes de uso</h4>
-                <h4>Condiciondes de uso</h4>
-            </div>
-            <div class="info-item">
-                <h3>INFORMACION</h3>
-                <h4>Condiciondes de uso</h4>
-                <h4>Condiciondes de uso</h4>
-            </div>
-            <div class="info-item">
-                <h3>INFORMACION</h3>
-                <h4>Condiciondes de uso</h4>
-                <h4>Condiciondes de uso</h4>
-                <h4>Condiciondes de uso</h4>
-                <h4>Condiciondes de uso</h4>
-            </div>
-            <div class="info-item">
-                <h3>INFORMACION</h3>
-                <h4>Condiciondes</h4>
-                <h4>Condiciondes</h4>
-                <h4>Condiciondes</h4>
-                <h4>Condiciondes</h4>
-                <h4>Condiciondes</h4>
-                <h4>Condiciondes</h4>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
 
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>

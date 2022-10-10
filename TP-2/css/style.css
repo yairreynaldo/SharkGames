@@ -10,6 +10,7 @@ main {
     background-color: #1C2C46;
     width: 100%;
     height: 1889px;
+    /* visibility: hidden; */
 }
 
 header {
@@ -111,9 +112,15 @@ header {
     flex-direction: column;
 }
 
+.menu-perfil h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .perfil-active {
     transform: unset;
     transition: 0.5s;
+    z-index: 100;
 }
 
 .perfil-item {
@@ -126,6 +133,7 @@ header {
     height: 72px;
     display: inline-flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -150,6 +158,7 @@ header {
 .burguer-active {
     transform: unset;
     transition: 0.5s;
+    z-index: 100;
     /* background-color: #191721;
     width: 205px;
     height: 451px;
@@ -186,24 +195,48 @@ header {
 
 /* CARROUSEL */
 
-.carrusel {
-    width: 80%;
-    padding: 20px;
-    margin: 0 auto;
-    /* position: relative; */
+.cars {
     display: flex;
     flex-direction: column;
-    /* overflow-x: auto; */
+    /* margin-left: 70px; */
+    align-items: center;
 }
+
+.carrusel {
+    width: 60%;
+    padding: 20px;
+    /* margin: 0 auto; */
+    position: relative;
+    /* display: flex;
+    flex-direction: column; */
+    overflow: hidden;
+}
+
+.carrusel h2 {
+    padding: 0 4vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
 
 .itemCarrusel {
-    display: grid;
+    /* display: grid;
     grid-template-areas: "j1" "j2" "j3" "j4" "j5" "j6";
     grid-template-columns: auto auto auto auto auto auto;
-    height: 225px;
+    height: 225px; */
+    padding: 0 7vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
-.flechasCarrusel {
+.itemCarrusel::-webkit-scrollbar {
+    display: none;
+  }
+
+/* .flechasCarrusel {
     top: 0;
     height: 90%;
     width: 95%;
@@ -211,6 +244,40 @@ header {
     align-items: center;
     justify-content: space-between;
     position: absolute;
+} */
+
+.pre-btn,
+.nxt-btn {
+  border: none;
+  width: 7vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #1C2C46 100%);
+  cursor: pointer;
+  z-index: 8;
+}
+
+.pre-btn {
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.nxt-btn {
+  right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img {
+  opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
 }
 
 .card {
@@ -222,7 +289,7 @@ header {
     cursor: pointer;
 }
 
-.j1 {
+/* .j1 {
     grid: j1;
 }
 
@@ -250,7 +317,7 @@ header {
 
 h2 {
     color: white;
-}
+} */
 
 .descripcion {
     display: none;
@@ -317,9 +384,10 @@ h2 {
 }
 
 .card:hover .btn-comprar:active {
-    background-color: #8FB175;
+    background-color: #76D32D;
     /* box-shadow: 0 0px #666; */
     transform: translateY(2px);
+    /* opacity: .6; */
 }
 
 
@@ -338,7 +406,8 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     width: 514px;
-    height: 100%;
+    height: 80%;
+    margin-top: 20px;
 }
 
 .redes img {
@@ -346,16 +415,24 @@ footer {
     height: 40px;
 }
 
+
 .redes-item-footer {
     display: flex;
+    margin-left: 80px;
 }
 
 .redes-item-footer h3 {
+    margin-top: 5px;
+    margin-left: 5px;
     text-align: center;
     font-size: 16px;
 }
 
-.copir h4 {
+.copir{
+    margin-left: 40px;
+}
+
+.copir p {
     opacity: .2;
     font-size: 10px;
 }
@@ -365,18 +442,91 @@ footer {
 }
 
 .info-item {
-    height: 100%;
+    height: 80%;
     width: 140px;
-    margin-right: 50px;
+    margin-right: 120px;
+    margin-top: 10px;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
 .info-item h3 {
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-.info-item h4 {
+.info-item p {
     font-size: 11px;
     opacity: .6;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* Lanzamiento */
+
+.imgs-lanz {
+    height: 560px;
+}
+
+.img-grande {
+    width: 100%;
+    height: 560px;
+    position: absolute
+}
+
+.img-chica {
+    width: 700px;
+    height: 256px;
+    right: 10%;
+    bottom: 20%;
+    position: absolute;
+    opacity: .2;
+    /* background-blend-mode: darken; */
+}
+
+/*LOADING*/
+
+#spinner {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10000;
+    background-color: #1C2C46;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loading-spin {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/sharklogo.png);
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: rotate 4s linear infinite;
+}
+
+.numero-carga {
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
 }
