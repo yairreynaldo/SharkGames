@@ -1,3 +1,187 @@
+/* HOME */
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+main {
+    background-color: #1C2C46;
+    width: 100%;
+    height: 1889px;
+}
+
+header {
+    background-color: #191721;
+    display: flex;
+    width: 100%;
+    height: 51px;
+    justify-content: space-between;
+}
+
+/*NAV*/
+
+.logo {
+    display: inline-flex;
+    border-right: 1px solid white;
+    width: 110px;
+    justify-content: space-between;
+    padding-right: 5px;
+    padding-left: 15px;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.logo h3 {
+    color: white;
+    /* font-style: piedra; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+
+.carrito {
+    color: white;
+    cursor: pointer;
+}
+
+.burguer {
+    color: white;
+    cursor: pointer;
+}
+
+.menus {
+    display: inline-flex;
+    border-left: 1px solid white;
+    width: 205px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menus h4 {
+    color: white;
+}
+
+.fotoperfil {
+    width: 30px;
+    height: 30px;
+}
+
+.search {
+    display: inline-flex;
+    align-items: center;
+    /* margin-left: 5px; */
+    /* width: 100%; */
+}
+
+.search input {
+    width: 256px;
+    height: 20px;
+    border-radius: 48px;
+    padding-left: 15px;
+}
+
+.logYser {
+    display: flex;
+}
+
+
+/*MENU PERFIL*/
+
+.fotoperfil {
+    cursor: pointer;
+}
+
+.menu-perfil {
+    position: fixed;
+    right: 0;
+    background-color: #191721;
+    width: 130px;
+    height: 246px;
+    margin-top: 2px;
+    transform: translateX(100%);
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil-active {
+    transform: unset;
+    transition: 0.5s;
+}
+
+.perfil-item {
+    height: 36px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.redes-item {
+    height: 72px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+
+/*MENU HAMBURGUESA*/
+
+.menu-burguer {
+    /*  display: none; */
+    position: fixed;
+    right: 0;
+    background-color: #191721;
+    width: 205px;
+    height: 427px;
+    margin-top: 2px;
+    transform: translateX(100%);
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
+    grid-auto-rows: max-content; */
+}
+
+.burguer-active {
+    transform: unset;
+    transition: 0.5s;
+    /* background-color: #191721;
+    width: 205px;
+    height: 451px;
+    float: right;
+    position: absolute;
+    right: 0;
+    transition: all .5s ease;
+    margin-top: 5px; */
+}
+
+.menu-item {
+    height: 36px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.menu-item h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.menu-item-cruz {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+}
+
+.cruz {
+    cursor: pointer;
+    color: white;
+}
+
 /* 4 EN LINEA */
 body{
     background-color: #1C2C46;
@@ -7,6 +191,7 @@ h1{
     color: white;
     padding-left: 250px;
     font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
 }
 
 .contenedor{
@@ -27,11 +212,12 @@ h1{
 }
 
 .subtituloJuego h2{
-    color: black;
+    color: white;
 }
 
 .subtitulo .vs{
     padding-top: 25px;
+    color: white;
 }
 
 .subtituloJuego h2 span img{
@@ -62,7 +248,7 @@ h1{
 .iconos{
     background-color: rgba(128, 128, 128, 0.2);
     width: 90%;
-    height: 35px;
+    height: 40px;
     border: solid 1px black;
     display: flex;
 }
@@ -94,7 +280,7 @@ h1{
     color: rgba(187, 187, 187, 1);
 }
 
-.informacion{
+.info{
     display: grid;
     grid-template-rows: auto auto;
     margin: 20px 80px;
@@ -103,11 +289,11 @@ h1{
     font-family: 'Courier New', Courier, monospace;
 }
 
-.informacion h2{
-    color: black;
+.info h2{
+    color: rgb(166, 255, 0);
 }
 
-.informacion h3{
+.info h3{
     color: white;
 }
 
@@ -133,12 +319,12 @@ h1{
 .escribirComent{
     display: flex;
     justify-content: center;
+    height: 360px;
 }
 
 .escribirComent input{
     background-color: rgba(140, 154, 175, 1);
     width: 80%;
-    height: 250px;
     border-radius: 40px;
     text-align: center;
     text-decoration: rgba(0, 0, 0, 0.6);
@@ -149,9 +335,25 @@ h1{
     justify-content: center;
 }
 
+.stars{
+    position: relative;
+    left: 170px;
+    bottom: 150px;
+    color: white;
+}
+
+.stars iconify-icon{
+    cursor: pointer;
+}
+
 .boton button{
     background-color: rgba(77, 118, 45, 1);
+    position: relative;
+    bottom: 135px;
     width: 200px;
+    height: 70px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .comentarios{
@@ -162,6 +364,7 @@ h1{
 .tituloComentario{
     background-color: rgba(217, 217, 217, 0.5);
     text-transform: uppercase;
+    padding-top: 30px;
 }
 
 .tituloComentario h1{
@@ -171,9 +374,14 @@ h1{
 .comentarios .coments{
     background-color: rgba(217, 217, 217, 0.2);
     padding-left: 20px;
+    padding-top: 10px;
     height: 360px;
     display: grid;
     grid-template-rows: auto auto auto;
+}
+
+.comentarios .coments h3{
+    color: black;
 }
 
 .comentarios .coments h3 span{
@@ -189,3 +397,72 @@ h1{
 .comentarios .puntaje h3{
     padding-right: 50px;
 }
+
+/* FOOTER */
+
+footer {
+    /* border: 1px solid black; */
+    background-color: #191721;
+    width: 100%;
+    height: 212px;
+    display: flex;
+}
+
+.redes {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 514px;
+    height: 80%;
+    margin-top: 20px;
+}
+
+.redes img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.redes-item-footer {
+    display: flex;
+    margin-left: 80px;
+}
+
+.redes-item-footer h3 {
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.copir{
+    margin-left: 40px;
+}
+
+.copir p {
+    opacity: .2;
+    font-size: 10px;
+}
+
+.informacion {
+    display: flex;
+}
+
+.info-item {
+    height: 80%;
+    width: 140px;
+    margin-right: 120px;
+    margin-top: 10px;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
+
+.info-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    font-size: 11px;
+    opacity: .6;
+    margin-bottom: 10px;
+}   
