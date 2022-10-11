@@ -141,7 +141,7 @@ h1{
 
 .galeria{
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     height: 170px;
     margin-left: 300px;
     margin-right: 300px;
@@ -179,9 +179,11 @@ ul.slider img:target {
 
 .menu li{
     display: flex;
-    justify-content: flex-end;
-    margin-right: 130px;
-    height: 28px;    
+    justify-content: flex-start;
+    margin-left: 60px;
+    height: 30px;    
+    top: 40px;
+    padding: 7px;
 }
 
 .menu a{
@@ -194,6 +196,7 @@ ul.slider img:target {
 .menu a:hover{
     background-color: grey;
 }
+
 
 .caja{
     margin-left: 350px;
