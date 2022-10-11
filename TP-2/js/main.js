@@ -20,7 +20,7 @@
                 contador+=1;
                 numero.textContent = contador + "%";
             }
-        }, 10);
+        }, 50);
     }
 
      const menu = document.querySelector(".menu-burguer");
