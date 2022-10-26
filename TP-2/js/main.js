@@ -2,27 +2,29 @@
  document.addEventListener("DOMContentLoaded", () => {
 
 
-    loader();
+     loader();
 
-    const numero = document.querySelector(".numero-carga");
-    let contador = 0;
-    function loader() {
-        /* setTimeout(function () {
-            document.getElementById('spinner').style.visibility = "hidden";
-            document.getElementById('main').style.visibility = "visible";
-        }, 5000); */
-        setInterval(() => {
-            if(contador == 100){
-                document.getElementById('spinner').style.visibility = "hidden";
-                document.querySelector('.contenido').style.visibility = "visible";
-                clearInterval();
-            }else{
-                contador+=1;
-                numero.textContent = contador + "%";
-            }
-        }, 50);
-    }
+     const numero = document.querySelector(".numero-carga");
+     let contador = 0;
 
+     function loader() {
+         /* setTimeout(function () {
+             document.getElementById('spinner').style.visibility = "hidden";
+             document.getElementById('main').style.visibility = "visible";
+         }, 5000); */
+         setInterval(() => {
+             if (contador == 100) {
+                 document.getElementById('spinner').style.visibility = "hidden";
+                 document.querySelector('.contenido').style.visibility = "visible";
+                 clearInterval();
+             } else {
+                 contador += 1;
+                 numero.textContent = contador + "%";
+             }
+         }, 50);
+     }
+
+     const main = document.querySelector("#main");
      const menu = document.querySelector(".menu-burguer");
      document.querySelector(".burguer").addEventListener("click", (e) => {
          if (!menuPerfil.classList.contains("perfil-active")) {
@@ -32,6 +34,15 @@
      document.querySelector(".cruz").addEventListener("click", (e) => {
          if (menu.classList.contains("burguer-active")) {
              menu.classList.remove("burguer-active");
+         }
+     });
+
+     main.addEventListener("click", (e) => {
+         if (menu.classList.contains("burguer-active")) {
+             menu.classList.remove("burguer-active");
+         }
+         if (menuPerfil.classList.contains("perfil-active")) {
+             menuPerfil.classList.remove("perfil-active");
          }
      });
 
@@ -58,7 +69,7 @@
              item.scrollLeft -= itemsWidth;
          })
      })
-     
+
 
 
 

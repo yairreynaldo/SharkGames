@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     color: white;
+    font-family: 'Poppins';
 }
 
 body {
@@ -196,67 +197,69 @@ header {
     color: white;
 }
 
+
 /*Contenido*/
 
-h1{
+h1 {
     color: white;
     padding-left: 250px;
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
     margin: 10px;
 }
 
-.contenedor{
+.contenedor {
     display: grid;
     grid-template-columns: 70% auto;
     margin: 20px;
     height: 500px;
 }
 
-.portada{
+.portada {
     padding-left: 50px;
 }
 
-.subtitulo{
+.subtitulo {
     display: flex;
     justify-content: space-between;
     width: 90%;
 }
 
-.subtituloJuego h2{
+.subtituloJuego h2 {
     color: white;
 }
 
-.subtitulo .vs{
+.subtitulo .vs {
     padding-top: 25px;
     color: white;
 }
 
-.subtituloJuego h2 span img{
+.subtituloJuego h2 span img {
     width: 50px;
     height: 50px;
     border-radius: 100px;
 }
 
-.subtitulo h2{
+.subtitulo h2 {
     text-transform: uppercase;
 }
 
-.imagen img{
+.imagen img {
     width: 90%;
     height: 380px;
 }
 
-.videos{    
+.videos {
     margin-top: 20px;
 }
-.video img{
+
+.video img {
     height: 210px;
     width: 100%;
     margin-bottom: 10px;
     border-radius: 30px;
 }
 
-.iconos{
+.iconos {
     background-color: rgba(128, 128, 128, 0.2);
     width: 90%;
     height: 40px;
@@ -264,21 +267,21 @@ h1{
     display: flex;
 }
 
-.icono1{
+.icono1 {
     display: flex;
     width: 100%;
     justify-content: flex-start;
     align-items: center;
 }
 
-.icono2{
+.icono2 {
     display: flex;
     width: 100%;
     justify-content: flex-end;
     align-items: center;
 }
 
-.breadcrumb{
+.breadcrumb {
     display: grid;
     grid-template-columns: 150px 100px 150px 100px 150px;
     margin: 20px;
@@ -286,54 +289,54 @@ h1{
     padding-left: 80px;
 }
 
-.breadcrumb h2{
+.breadcrumb h2 {
     text-decoration: underline;
     color: rgba(187, 187, 187, 1);
 }
 
-.info{
+.info {
     display: grid;
     grid-template-rows: auto auto;
     margin: 20px 80px;
     height: 450px;
     width: 700px;
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 
-.info h2{
+.info h2 {
     color: rgb(166, 255, 0);
 }
 
-.info h3{
+.info h3 {
     color: white;
 }
 
-.cajaComentarios{
+.cajaComentarios {
     display: grid;
     grid-template-columns: 50% auto;
     margin: 20px;
     height: 450px;
 }
 
-.comentar{
+.comentar {
     display: grid;
     grid-template-rows: 20% auto 10%;
 }
 
-.tituloComentar{
+.tituloComentar {
     display: flex;
     justify-content: center;
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
     color: white;
 }
 
-.escribirComent{
+.escribirComent {
     display: flex;
     justify-content: center;
     height: 360px;
 }
 
-.escribirComent input{
+.escribirComent input {
     background-color: rgba(140, 154, 175, 1);
     width: 80%;
     border-radius: 40px;
@@ -341,23 +344,23 @@ h1{
     text-decoration: rgba(0, 0, 0, 0.6);
 }
 
-.boton{
+.boton {
     display: flex;
     justify-content: center;
 }
 
-.stars{
+.stars {
     position: relative;
     left: 250px;
     bottom: 150px;
     color: white;
 }
 
-.stars iconify-icon{
+.stars iconify-icon {
     cursor: pointer;
 }
 
-.boton button{
+.boton button {
     background-color: rgba(77, 118, 45, 1);
     position: relative;
     bottom: 135px;
@@ -367,22 +370,22 @@ h1{
     cursor: pointer;
 }
 
-.comentarios{
+.comentarios {
     display: grid;
     grid-template-rows: 20% auto;
 }
 
-.tituloComentario{
+.tituloComentario {
     background-color: rgba(217, 217, 217, 0.5);
     text-transform: uppercase;
     padding-top: 30px;
 }
 
-.tituloComentario h1{
+.tituloComentario h1 {
     padding-left: 200px;
 }
 
-.comentarios .coments{
+.comentarios .coments {
     background-color: rgba(217, 217, 217, 0.2);
     padding-left: 20px;
     padding-top: 10px;
@@ -391,23 +394,24 @@ h1{
     grid-template-rows: auto auto auto;
 }
 
-.comentarios .coments h3{
+.comentarios .coments h3 {
     color: black;
 }
 
-.comentarios .coments h3 span{
+.comentarios .coments h3 span {
     color: white;
 }
 
-.comentarios .puntaje{
+.comentarios .puntaje {
     display: flex;
     justify-content: space-between;
     color: white;
 }
 
-.comentarios .puntaje h3{
+.comentarios .puntaje h3 {
     padding-right: 50px;
 }
+
 
 /* FOOTER */
 
@@ -433,7 +437,6 @@ footer {
     height: 40px;
 }
 
-
 .redes-item-footer {
     display: flex;
     margin-left: 80px;
@@ -446,7 +449,7 @@ footer {
     font-size: 16px;
 }
 
-.copir{
+.copir {
     margin-left: 40px;
 }
 
@@ -457,11 +460,12 @@ footer {
 
 .informacion {
     display: flex;
+    max-width: 764px;
 }
 
 .info-item {
     height: 80%;
-    width: 140px;
+    width: calc(100%/4);
     margin-right: 120px;
     margin-top: 10px;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
@@ -477,6 +481,7 @@ footer {
     opacity: .6;
     margin-bottom: 10px;
 }
+
 
 /*LOADING*/
 
@@ -514,14 +519,11 @@ footer {
     text-align: center;
 }
 
-
 @keyframes rotate {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(360deg);
     }
-
 }

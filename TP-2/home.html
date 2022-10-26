@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Interfaces TP2</title>
 </head>
@@ -12,12 +15,15 @@
 <body>
 
     <div id="spinner">
-        <div class="loading-spin"></div>
+        <div class="loading-spin">
+            <span class="loader"><span class="loader-inner"></span></span>
+        </div>
+        <h3>Cargando...</h3>
         <div class="numero-carga">0%</div>
     </div>
 
     <div class="contenido">
-        
+
         <header>
             <div class="logYser">
                 <div class="logo">
@@ -36,7 +42,7 @@
                 <iconify-icon class="burguer" id="bur" icon="ci:hamburger" width="30" height="30"></iconify-icon>
             </div>
         </header>
-    
+
         <main id="main">
             <ul class="menu-burguer">
                 <li class="menu-item">
@@ -93,7 +99,7 @@
                     <iconify-icon class="cruz" icon="ant-design:close-outlined" width="40" height="40"></iconify-icon>
                 </li>
             </ul>
-    
+
             <ul class="menu-perfil">
                 <li class="perfil-item">
                     <h3>Mi Perfil</h3>
@@ -126,367 +132,371 @@
                     <iconify-icon icon="carbon:logout" style="color: white;" width="30" height="30"></iconify-icon>
                 </li>
             </ul>
-    
+
             <div class="cars">
-                <div class="carrusel">
-                    <h2>Recomendados:</h2>
+                <!-- <div class="carrusel"> -->
+                <h2>Recomendados:</h2>
+                <div class="itemCarrusel">
                     <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <div class="itemCarrusel">
-                        <div class="card">
-                            <img src="img/fifa23.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Fifa 23</h4>
-                                <p>Comprado</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
+                    <div class="card">
+                        <img src="img/logo-lord.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">Lord of Rings:Gollum</h4>
+                            <p>$99.99</p>
                         </div>
-                        <div class="card">
-                            <img src="img/nba2k23.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">NBA 2K23</h4>
-                                <p>$89.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/valhalla.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">A.C:Valhalla</h4>
-                                <p>$79.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/Elden-ring.webp">
-                            <div class="descripcion">
-                                <h4 class="titulo">Elden Ring</h4>
-                                <p>$69.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/gran_turismo7.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Gran Turismo 7</h4>
-                                <p>$59.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/battlefield.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Battlefield 2042</h4>
-                                <p>$2999.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/war-zone.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Call Of Duty: WarZone</h4>
-                                <p>$999.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/spiderman.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Spider-Man</h4>
-                                <p>$599.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
+                        <a href="lanzamiento.html">
+                            <button class="btn-reservar">RESERVAR</button>
+                        </a>
                     </div>
+                    <div class="card">
+                        <img src="img/4_en_linea.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">4 en linea: F vs A</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <a href="4enlinea.html">
+                            <button class="btn-jugar">JUGAR</button>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <img src="img/valhalla.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">A.C:Valhalla</h4>
+                            <p>$79.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/Elden-ring.webp">
+                        <div class="descripcion">
+                            <h4 class="titulo">Elden Ring</h4>
+                            <p>$69.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/gran_turismo7.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Gran Turismo 7</h4>
+                            <p>$59.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/battlefield.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Battlefield 2042</h4>
+                            <p>$2999.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/war-zone.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">COD: WarZone</h4>
+                            <p>$999.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/spiderman.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Spider-Man</h4>
+                            <p>$599.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
                 </div>
-                <div class="carrusel">
-                    <h2>Novedades:</h2>
+                <!-- </div> -->
+                <!-- <div class="carrusel"> -->
+                <h2>Novedades:</h2>
+                <div class="itemCarrusel">
                     <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <div class="itemCarrusel">
-                        <div class="card">
-                            <img src="img/tlor1.png">
-                            <div class="descripcion">
-                                <h4 class="titulo">Lord of Rings:Gollum</h4>
-                                <p>$99.99</p>
-                            </div>
-                            <a href="lanzamiento.html">
-                                <button class="btn-reservar">RESERVAR</button>
-                            </a>
+                    <div class="card">
+                        <img src="img/fifa23.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">FIFA 23</h4>
+                            <p>Comprado</p>
                         </div>
-                        <div class="card">
-                            <img src="img/remastered.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Spider-Man Remaster</h4>
-                                <p>$300.00</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/fall-guys.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Fall Guys</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/dying-light.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Dying Light 2</h4>
-                                <p>$69.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/f1-manager.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">F1 Manager 22</h4>
-                                <p>$99.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/fifa23.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Fifa 23</h4>
-                                <p>$5000.00</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/resident-evil.webp">
-                            <div class="descripcion">
-                                <h4 class="titulo">Resident Evil: Village</h4>
-                                <p>$49.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/dragon-ballZ.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Dragon Ball Z: Kakarot</h4>
-                                <p>$99.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
+                        <button class="btn-jugar">JUGAR</button>
                     </div>
+                    <div class="card">
+                        <img src="img/nba2k23.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">NBA 2K23</h4>
+                            <p>$89.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/logo-lord.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">Lord of Rings:Gollum</h4>
+                            <p>$99.99</p>
+                        </div>
+                        <a href="lanzamiento.html">
+                            <button class="btn-reservar">RESERVAR</button>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <img src="img/dying-light.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Dying Light 2</h4>
+                            <p>$69.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/f1-manager.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">F1 Manager 22</h4>
+                            <p>$99.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fifa23.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">FIFA 23</h4>
+                            <p>$5000.00</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/resident-evil.webp">
+                        <div class="descripcion">
+                            <h4 class="titulo">Resident Evil: Village</h4>
+                            <p>$49.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/dragon-ballZ.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">DBZ: Kakarot</h4>
+                            <p>$99.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
                 </div>
-                <div class="carrusel">
-                    <h2>Gratuitos:</h2>
+                <!-- </div> -->
+                <!-- <div class="carrusel"> -->
+                <h2>Gratuitos:</h2>
+                <div class="itemCarrusel">
                     <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <div class="itemCarrusel">
-                        <div class="card">
-                            <img src="img/Fuego_vs_Agua.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">4 en linea: F vs A</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <a href="4enlinea.html">
-                                <button class="btn-jugar">JUGAR</button>
-                            </a>
+                    <div class="card">
+                        <img src="img/4_en_linea.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">4 en linea: F vs A</h4>
+                            <p>Gratis</p>
                         </div>
-                        <div class="card">
-                            <img src="img/pubg.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Pubg</h4>
-                                <p>Gratis</p>
-                            </div>
+                        <a href="4enlinea.html">
                             <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/fortnite.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Fortnite</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/smite.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Smite</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/worldoftanks.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">World of Tanks</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/overwatch.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Overwatch 2</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/ciberpunk.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Ciberpunk 2077</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/genshin.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Genshin Impact</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
+                        </a>
                     </div>
+                    <div class="card">
+                        <img src="img/pubg.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Pubg</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fortnite.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Fortnite</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/smite.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Smite</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/worldoftanks.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">World of Tanks</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/overwatch.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Overwatch 2</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/ciberpunk.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Ciberpunk 2077</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/genshin.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Genshin Impact</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
                 </div>
-                <div class="carrusel">
-                    <h2>Tendencias:</h2>
+                <!-- </div> -->
+                <!-- <div class="carrusel"> -->
+                <h2>Tendencias:</h2>
+                <div class="itemCarrusel">
                     <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <div class="itemCarrusel">
-                        <div class="card">
-                            <img src="img/godOfWar.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">God of War: Ragnarok</h4>
-                                <p>$99.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
+                    <div class="card">
+                        <img src="img/godOfWar.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">GOW: Ragnarok</h4>
+                            <p>$99.99</p>
                         </div>
-                        <div class="card">
-                            <img src="img/gta.webp">
-                            <div class="descripcion">
-                                <h4 class="titulo">GTA V</h4>
-                                <p>$29.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/fifa23.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Fifa 23</h4>
-                                <p>$5000.00</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/pubg.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Pubg</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/fifa23.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Minecraft</h4>
-                                <p>$3899.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/fortnite.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Fortnite</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/Elden-ring.webp">
-                            <div class="descripcion">
-                                <h4 class="titulo">Elden Ring</h4>
-                                <p>$69.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/spiderman.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Spider-Man</h4>
-                                <p>$599.99</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
-                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
                     </div>
+                    <div class="card">
+                        <img src="img/gta.webp">
+                        <div class="descripcion">
+                            <h4 class="titulo">GTA V</h4>
+                            <p>$29.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fifa23.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">FIFA 23</h4>
+                            <p>$5000.00</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/pubg.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Pubg</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fifa23.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Minecraft</h4>
+                            <p>$3899.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fortnite.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Fortnite</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/Elden-ring.webp">
+                        <div class="descripcion">
+                            <h4 class="titulo">Elden Ring</h4>
+                            <p>$69.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/spiderman.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Spider-Man</h4>
+                            <p>$599.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
                 </div>
-                <div class="carrusel">
-                    <h2>Ultimos jugados:</h2>
+                <!-- </div> -->
+                <!-- <div class="carrusel"> -->
+                <h2>Ultimos jugados:</h2>
+                <div class="itemCarrusel">
                     <button class="pre-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
-                    <div class="itemCarrusel">
-                        <div class="card">
-                            <img src="img/fifa23.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Fifa 23</h4>
-                                <p>Comprado</p>
-                            </div>
-                            <button class="btn-comprar">COMPRAR</button>
+                    <div class="card">
+                        <img src="img/fifa23.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">FIFA 23</h4>
+                            <p>Comprado</p>
                         </div>
-                        <div class="card">
-                            <img src="img/Fuego_vs_Agua.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">4 en linea: F vs A</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/csgo.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Counter Strike: GO</h4>
-                                <p>Comprado</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/among.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Among us</h4>
-                                <p>Comprado</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/warships.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">World of Warships</h4>
-                                <p>Comprado</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/dota2.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Dota 2</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/league.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">League of Legends</h4>
-                                <p>Comprado</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
-                        <div class="card">
-                            <img src="img/war-zone.jpg">
-                            <div class="descripcion">
-                                <h4 class="titulo">Call of Duty: Warzone</h4>
-                                <p>Gratis</p>
-                            </div>
-                            <button class="btn-jugar">JUGAR</button>
-                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
                     </div>
+                    <div class="card">
+                        <img src="img/Fuego_vs_Agua.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">4 en linea: F vs A</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/csgo.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">CS:GO</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/among.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Among us</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/warships.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">World Warships</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/dota2.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Dota 2</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/league.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">LOL</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/war-zone.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Call of Duty: Warzone</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <button class="nxt-btn"><iconify-icon icon="bxs:right-arrow" style="color: black;" width="40" height="40"></iconify-icon></button>
                 </div>
+                <!-- </div> -->
             </div>
         </main>
         <footer>
@@ -512,7 +522,7 @@
                 </div>
             </div>
             <div class="informacion">
-                <div class="info-item-resp">
+                <div class="info-item">
                     <h3>INFORMACION</h3>
                     <p>Condiciondes de uso</p>
                     <p>Politicas de Privacidad</p>

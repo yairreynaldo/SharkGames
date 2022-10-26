@@ -1,6 +1,5 @@
 /* MAIN */
 
-
 body {
     background-color: #1C2C46;
 }
@@ -9,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     color: white;
+    font-family: 'Poppins';
 }
 
 main {
@@ -207,7 +207,7 @@ header {
     position: absolute;
 }
 
-.img-chica{
+.img-chica {
     top: 280px;
     bottom: 0px;
     width: 700px;
@@ -217,7 +217,7 @@ header {
     opacity: .3;
 }
 
-.img-chica-2{
+.img-chica-2 {
     top: 52px;
     right: 150px;
     position: absolute;
@@ -226,7 +226,7 @@ header {
     opacity: .6;
 }
 
-.img-titulo{
+.img-titulo {
     position: absolute;
     bottom: 150px;
     left: 45%;
@@ -234,13 +234,11 @@ header {
     /* margin: 0 auto; */
 }
 
-.img-titulo h2{
+.img-titulo h2 {
     margin-left: 25px;
 }
 
-
-
-.card:hover .btn-reservar {
+.btn-reservar {
     display: inline-block;
     width: 100%;
     padding: 2px 12px;
@@ -270,9 +268,7 @@ header {
     /* opacity: .6; */
 }
 
-
-
-.btn-click{
+.btn-click {
     height: 54px;
     width: 200px;
     background-color: #E95526;
@@ -282,72 +278,72 @@ header {
     transition: 0.5s;
 }
 
-.descrip h4{
+.descrip h4 {
     position: relative;
     right: 60px;
 }
 
-.historia{
+.historia {
     height: 400px;
     margin: 50px 200px;
 }
 
-.historia .title{
+.historia .title {
     margin: 10px 10px;
 }
 
-.historia .title h1{
+.historia .title h1 {
     text-align: start;
 }
 
-.imgtext{
+.imgtext {
     display: grid;
     grid-template-columns: 60% auto;
     height: 345px;
 }
 
-.imgtext .text{
+.imgtext .text {
     padding-left: 10px;
     background-color: rgba(217, 217, 217, 0.2);
 }
 
-.text p{
+.text p {
     padding-top: 25px;
 }
 
-.imgtext .imagenes{
+.imgtext .imagenes {
     margin-left: 20px;
     display: block;
     block-size: 345px;
 }
 
-.imagenes img{
+.imagenes img {
     width: 302px;
     padding-left: 15px;
     border-radius: 30px;
 }
 
-h1{
+h1 {
     text-transform: uppercase;
     text-align: center;
 }
 
-.jugabilidad{
+.jugabilidad {
     height: 235px;
     margin: 50px 200px;
     width: 60%;
 }
 
-.title h2{
+.title h2 {
     padding-left: 150px;
 }
 
-.jugabilidad .modos{
+.jugabilidad .modos {
     display: grid;
     grid-template-columns: auto auto;
 }
 
-.imagen img{
+.imagen img {
     padding-top: 10px;
     width: 400px;
     height: 200px;
@@ -355,7 +351,7 @@ h1{
     margin-right: 10px;
 }
 
-.info{
+.info {
     padding-top: 15px;
     padding-right: 20px;
     margin-left: 10px;
@@ -363,7 +359,7 @@ h1{
     text-align: center;
 }
 
-.galeria{
+.galeria {
     margin-top: 10px;
     margin-bottom: 30px;
     height: 170px;
@@ -371,7 +367,8 @@ h1{
     margin-right: 300px;
 }
 
-ul, li{
+ul,
+li {
     padding: 0;
     margin: 0;
     list-style: none inside;
@@ -397,44 +394,43 @@ ul.slider img:target {
     opacity: 1;
 }
 
-.fotos{
+.fotos {
     position: relative;
 }
 
-.menu li{
+.menu li {
     display: flex;
     justify-content: flex-start;
     margin-left: 60px;
-    height: 30px;    
+    height: 30px;
     top: 40px;
     padding: 7px;
 }
 
-
-.menu a{
+.menu a {
     text-decoration: none;
     padding: 5px;
     border: black 1px solid;
     transition: background-color 2s;
 }
 
-.menu a:hover{
+.menu a:hover {
     background-color: grey;
 }
 
-
-
-.caja{
+.caja {
     margin-left: 350px;
 }
 
-.caja h2 span{
+.caja h2 span {
     text-transform: uppercase;
 }
+
 
 /* footer{
     margin-top: 30px;
 } */
+
 
 /* FOOTER */
 
@@ -460,7 +456,6 @@ footer {
     height: 40px;
 }
 
-
 .redes-item-footer {
     display: flex;
     margin-left: 80px;
@@ -473,7 +468,7 @@ footer {
     font-size: 16px;
 }
 
-.copir{
+.copir {
     margin-left: 40px;
 }
 
@@ -484,11 +479,12 @@ footer {
 
 .informacion {
     display: flex;
+    max-width: 764px;
 }
 
 .info-item {
     height: 80%;
-    width: 140px;
+    width: calc(100%/4);
     margin-right: 120px;
     margin-top: 10px;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
@@ -504,6 +500,7 @@ footer {
     opacity: .6;
     margin-bottom: 10px;
 }
+
 
 /*LOADING*/
 
@@ -541,14 +538,11 @@ footer {
     text-align: center;
 }
 
-
 @keyframes rotate {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(360deg);
     }
-
 }
