@@ -204,7 +204,7 @@ h1 {
     color: white;
     padding-left: 250px;
     /* font-family: 'Courier New', Courier, monospace; */
-    margin: 10px;
+    padding-top: 10px;
 }
 
 .contenedor {
@@ -319,8 +319,11 @@ h1 {
 }
 
 .comentar {
-    display: grid;
-    grid-template-rows: 20% auto 10%;
+    /* display: grid;
+    grid-template-rows: 20% auto 10%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .tituloComentar {
@@ -344,6 +347,10 @@ h1 {
     text-decoration: rgba(0, 0, 0, 0.6);
 }
 
+.escribirComent input::placeholder {
+    color: white;
+}
+
 .boton {
     display: flex;
     justify-content: center;
@@ -351,9 +358,11 @@ h1 {
 
 .stars {
     position: relative;
-    left: 250px;
+    /* left: 250px; */
     bottom: 150px;
     color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .stars iconify-icon {
@@ -480,6 +489,11 @@ footer {
     font-size: 11px;
     opacity: .6;
     margin-bottom: 10px;
+}
+
+.info-item p:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 

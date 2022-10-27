@@ -671,6 +671,10 @@ footer {
         flex-direction: column; 
         overflow: hidden;
     }*/
+    /* .disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    } */
     .itemCarrusel {
         /* height: 225px; */
         /* padding: 0 7vw; */
@@ -681,7 +685,8 @@ footer {
         overflow: hidden;
         width: 70%;
         padding: 20px;
-        gap: 45px;
+        gap: 7%;
+        /*45px antes*/
         flex-wrap: nowrap;
         justify-content: flex-start;
     }
