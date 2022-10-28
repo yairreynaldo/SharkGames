@@ -779,14 +779,11 @@ footer {
         border: none;
         text-decoration: none;
         outline: none;
-    }
-    .card:hover .btn-comprar::after {
-        background-color: #4D762D;
-        transition: all 0.75s ease 0s;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-comprar:hover {
         background-color: #8FB175;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+        box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-comprar:active {
         background-color: #76D32D;
@@ -819,10 +816,11 @@ footer {
         border: none;
         text-decoration: none;
         outline: none;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-jugar:hover {
         background-color: #F886EC;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+        box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-jugar:active {
         background-color: #f89aef;
@@ -855,10 +853,11 @@ footer {
         border: none;
         text-decoration: none;
         outline: none;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-reservar:hover {
         background-color: #F68764;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+        box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-reservar:active {
         background-color: #f69273;
