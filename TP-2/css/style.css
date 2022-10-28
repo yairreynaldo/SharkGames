@@ -779,7 +779,6 @@ footer {
         border: none;
         text-decoration: none;
         outline: none;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-comprar:hover {
         background-color: #8FB175;
@@ -789,6 +788,7 @@ footer {
         background-color: #76D32D;
         /* box-shadow: 0 0px #666; */
         transform: translateY(2px);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
         /* opacity: .6; */
     }
     /* BTN-JUGAR */
@@ -816,7 +816,6 @@ footer {
         border: none;
         text-decoration: none;
         outline: none;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-jugar:hover {
         background-color: #F886EC;
@@ -826,6 +825,7 @@ footer {
         background-color: #f89aef;
         /* box-shadow: 0 0px #666; */
         transform: translateY(2px);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
         /* opacity: .6; */
     }
     /* BTN-RESERVAR  */
@@ -853,7 +853,6 @@ footer {
         border: none;
         text-decoration: none;
         outline: none;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-reservar:hover {
         background-color: #F68764;
@@ -863,6 +862,7 @@ footer {
         background-color: #f69273;
         /* box-shadow: 0 0px #666; */
         transform: translateY(2px);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
         /* opacity: .6; */
     }
     /* FOOTER */

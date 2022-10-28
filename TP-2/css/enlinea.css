@@ -380,6 +380,18 @@ h1 {
     cursor: pointer;
 }
 
+.boton button:hover {
+    background-color: #8FB175;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
+}
+
+.boton button:active {
+    background-color: #76D32D;
+    /* box-shadow: 0 0px #666; */
+    transform: translateY(2px);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+}
+
 .comentarios {
     display: grid;
     grid-template-rows: 20% auto;
