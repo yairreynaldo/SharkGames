@@ -774,14 +774,19 @@ footer {
         transition: 0.5s;
         font-size: 12px;
         text-align: center;
-        background-color: #4D762D;
+        /* background-color: #4D762D; */
         /* box-shadow: 0 0px #999; */
         border: none;
         text-decoration: none;
         outline: none;
     }
+    .card:hover .btn-comprar::after {
+        background-color: #4D762D;
+        transition: all 0.75s ease 0s;
+    }
     .card:hover .btn-comprar:hover {
         background-color: #8FB175;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-comprar:active {
         background-color: #76D32D;
@@ -817,6 +822,7 @@ footer {
     }
     .card:hover .btn-jugar:hover {
         background-color: #F886EC;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-jugar:active {
         background-color: #f89aef;
@@ -852,6 +858,7 @@ footer {
     }
     .card:hover .btn-reservar:hover {
         background-color: #F68764;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
     }
     .card:hover .btn-reservar:active {
         background-color: #f69273;
