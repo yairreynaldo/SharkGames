@@ -683,7 +683,8 @@ footer {
         scroll-behavior: smooth;
         align-items: center;
         overflow: hidden;
-        width: 70%;
+        /* width: 70%; */
+        width: 940px;
         padding: 20px;
         gap: 7%;
         /*45px antes*/
