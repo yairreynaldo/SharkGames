@@ -115,6 +115,7 @@ header {
     transition: 0.5s;
     display: flex;
     flex-direction: column;
+    z-index: 100;
 }
 
 .menu-perfil h3:hover {
@@ -156,6 +157,7 @@ header {
     transition: 0.5s;
     display: flex;
     flex-direction: column;
+    z-index: 100;
     /* display: grid;
     grid-auto-rows: max-content; */
 }
@@ -429,11 +431,15 @@ h1 {
     min-width: 200px;
     max-width: 200px;
     font-size: 18px;
-    /* display: none; */
+    display: none;
 }
 
 .carrusel-item:hover {
     transform: scale(1.2);
+}
+
+.carrusel-item:hover p {
+    display: flex;
 }
 
 .carrusel-item:hover img {
