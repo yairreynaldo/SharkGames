@@ -316,6 +316,7 @@ h1 {
     grid-template-columns: 50% auto;
     margin: 20px;
     height: 450px;
+    padding-top: 100px;
 }
 
 .comentar {
