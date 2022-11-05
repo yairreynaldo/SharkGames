@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: #1C2C46;
+}
+
+main {
+    background-color: #1C2C46;
+    width: 100%;
+    height: 1900px;
+    /* visibility: hidden; */
+}
+
+header {
+    background-color: #191721;
+    display: flex;
+    width: 100%;
+    height: 51px;
+    justify-content: space-between;
+}
+
+/*NAV*/
+
+.logo {
+    display: inline-flex;
+    border-right: 1px solid white;
+    width: 110px;
+    justify-content: space-between;
+    padding-right: 5px;
+    padding-left: 15px;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.logo h3 {
+    color: white;
+    /* font-style: piedra; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+
+.carrito {
+    color: white;
+    cursor: pointer;
+}
+
+.burguer {
+    color: white;
+    cursor: pointer;
+}
+
+.menus {
+    display: inline-flex;
+    border-left: 1px solid white;
+    width: 205px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menus h4 {
+    color: white;
+}
+
+.fotoperfil {
+    width: 30px;
+    height: 30px;
+}
+
+.search {
+    display: inline-flex;
+    align-items: center;
+    /* margin-left: 5px; */
+    /* width: 100%; */
+}
+
+.search input {
+    width: 256px;
+    height: 20px;
+    border-radius: 48px;
+    padding-left: 15px;
+}
+
+.logYser {
+    display: flex;
+}
+
+
+/*MENU PERFIL*/
+
+.fotoperfil {
+    cursor: pointer;
+}
+
+.menu-perfil {
+    position: fixed;
+    right: 0;
+    background-color: #191721;
+    width: 130px;
+    height: 246px;
+    margin-top: 2px;
+    transform: translateX(100%);
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-perfil h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.perfil-active {
+    transform: unset;
+    transition: 0.5s;
+    z-index: 100;
+}
+
+.perfil-item {
+    height: 36px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.redes-item {
+    height: 72px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*MENU HAMBURGUESA*/
+
+.menu-burguer {
+    /*  display: none; */
+    position: fixed;
+    right: 0;
+    background-color: #191721;
+    width: 205px;
+    height: 427px;
+    margin-top: 2px;
+    transform: translateX(100%);
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
+    grid-auto-rows: max-content; */
+}
+
+.burguer-active {
+    transform: unset;
+    transition: 0.5s;
+    z-index: 100;
+    /* background-color: #191721;
+    width: 205px;
+    height: 451px;
+    float: right;
+    position: absolute;
+    right: 0;
+    transition: all .5s ease;
+    margin-top: 5px; */
+}
+
+.menu-item {
+    height: 36px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.menu-item h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.menu-item-cruz {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+}
+
+.cruz {
+    cursor: pointer;
+    color: white;
+}
+
+/* juego */
+
+.juego{
+    padding-top: 60px;
+    display: flex;
+    gap: 120px;
+    justify-content: center;
+}
+
+.ficha1{
+    border: black 1px solid;
+    border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.ficha2{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 50px; 
+    width: 45px;
+    height: 45px;   
+    cursor: pointer;
+}
+
+.ficha3{
+    border: solid 1px black;
+    border-radius: 50px; 
+    width: 45px;
+    height: 45px;   
+    cursor: pointer;
+}
+
+.canvas-container{
+    justify-content: center;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+}
+
+.botones button{
+    color: black;
+    cursor: pointer;
+}
