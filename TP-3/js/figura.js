@@ -6,6 +6,7 @@ class Figura {
         this.posX = posX;
         this.posY = posY;
         this.fill = fill;
+        /** @type {CanvasRenderingContext2D} */
         this.context = context;
         this.param = false;
     }

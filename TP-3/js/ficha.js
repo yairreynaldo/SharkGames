@@ -2,7 +2,7 @@
 
 class Ficha extends Figura {
 
-    constructor(player, turn, posX, posY, radio, fill, context) {
+    constructor(player, turn, posX, posY, radio, fill, context, color) {
         super(posX, posY, fill, context);
         this.player = player;
         this.turn = turn;
@@ -11,17 +11,18 @@ class Ficha extends Figura {
         this.highlightedStyle = 'yellow';
         this.radio = radio;
         this.image = fill;
+        this.color = color;
     }
 
     draw() {
         /* super.draw(); */
         /* this.context.save(); */
         this.context.beginPath();
-        this.context.fillStyle = "white"
-        this.context.arc(this.posX, this.posY, this.radius, 0, Math.PI * 2);
+        this.context.fillStyle = this.color;
+        this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
         this.context.fill();
         this.context.stroke();
-        this.context.drawImage(this.image, this.posX - 25, this.posY - 25, SIZE_FIG, SIZE_FIG);
+        this.context.drawImage(this.image, this.posX - 15, this.posY - 15, 30, 30);
         this.context.closePath();
         /* this.context.clip(); */
         /* this.context.restore(); */
