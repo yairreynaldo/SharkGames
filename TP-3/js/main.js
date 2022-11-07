@@ -12,25 +12,29 @@ let boardCol = 6;
 let boardFil = 6;
 
 //Constantes
-let NUM_FIG = boardCol*boardFil;
+let NUM_FIG = boardCol * boardFil;
 const SIZE_FIG = 50;
+const SIZE_FICHA = 75;
 const WINNER_NUMBER = 4; //Cantidad de fichas iguales para ganar.
 
 //imagenes
 const urlBackground = "./img/background.jpg";
+let imgf1 = new Image();
+let imgf2 = new Image();
 const urlFicha1 = "./img/ficha1.jpg";
 const urlFicha2 = "./img/ficha2.jpg";
-const urlFicha1Player2 = "./img/player2.webp";
-const urlDropArrow = "./img/dropArrow.png";
+const urlFicha1Player2 = "./img/player2-ficha2.webp";
+const urlDropArrow = "./img/dropppp.png";
 const urlFicha = "./img/ficha12.jpg";
+const urlTab = "./img/poke.png";
 
 //coordenadas de las fichas que unicamente muestran turno.
 const posXP1 = SIZE_FIG;
-const posYP1 = SIZE_FIG*2;
+const posYP1 = SIZE_FIG
 let id_P1 = null;
 
-const posXP2 = SIZE_FIG*2;
-const posYP2 = SIZE_FIG*2;
+const posXP2 = SIZE_FIG + 70;
+const posYP2 = SIZE_FIG
 let id_P2 = null;
 
 //calculo de dimensiones de manera proporcional
@@ -63,7 +67,9 @@ let btnBigX = canvasWidth - 90;
 let btnBigY = btnMediumY + 30;
 
 //Variables generales
-let figuras = [];
+let figures = [];
+let fichasj1 = [];
+let fichasj2 = [];
 let tokensPlayed = 0;
 let lastClickedFigure = null;
 let isMouseDown = false;
@@ -71,23 +77,27 @@ let isMouseDown = false;
 //Iniciar juego...
 iniciar();
 
-function iniciar(){
+function iniciar() {
+
     //Reescribo los valores originales del juego.
     NUM_FIG = boardCol * boardFil;
-    boardWidth = canvasWidth / 2 - (boardCol / 2) * SIZE_FIG - SIZE_FIG/2;
-    boardHeight = canvasHeight / 2 - SIZE_FIG - SIZE_FIG;
+    boardWidth = (canvasWidth / 2) - (boardCol / 2) * SIZE_FIG - SIZE_FIG;
+    boardHeight = canvasHeight / 2 - SIZE_FIG * 4;
 
     dropWidth = boardWidth;
     dropHeight = boardHeight - SIZE_FIG;
 
     circlesWidth = boardWidth;
     circlesHeight = canvasHeight / 2;
-    
-    //Creo las figuras...
-    
+
+    imgf1.src = urlFicha1;
+    imgf2.src = urlFicha1Player2;
+
+    //Creo las figures...
+
     //Matriz del tablero
-    for(let x = 0; x < boardFil; x++){
-        for(let y = 0; y < boardCol; y++){
+    for (let x = 0; x < boardFil; x++) {
+        for (let y = 0; y < boardCol; y++) {
             boardWidth += SIZE_FIG;
             addCirculo(boardWidth, boardHeight);
         }
@@ -96,34 +106,34 @@ function iniciar(){
     }
 
     //Creo arreglo donde seria la "Zona soltar aqui"
-    for(let x = 0; x < boardCol; x++){
+    for (let x = 0; x < boardCol; x++) {
         dropWidth += SIZE_FIG;
         addZonaSoltar(dropWidth, dropHeight);
     }
-    
+
     //Crear las fichas de cada jugador
-    for(let i = 0; i < NUM_FIG / 2; i++){
-        let _posX = SIZE_FIG / 2 + Math.round(Math.random() * circlesWidth);
-        let _posY = canvasHeight - SIZE_FIG / 2 - Math.round(Math.random() * circlesHeight);
-        let _color = urlFicha2;
-        addFicha(_color, true, 1, _posX, _posY);
-        
-        _posX = canvasWidth - SIZE_FIG / 2 - Math.round(Math.random() * circlesWidth);
-        _posY = canvasHeight - SIZE_FIG / 2 - Math.round(Math.random() * circlesHeight);
-        _color = urlFicha1Player2;
-        addFicha(_color, true, 2, _posX, _posY);
+    for (let i = 0; i < NUM_FIG / 2; i++) {
+        /*  let _posX = SIZE_FIG / 2 + Math.round(Math.random() * circlesWidth);
+         let _posY = canvasHeight - SIZE_FIG / 2 - Math.round(Math.random() * circlesHeight); */
+        let _color = imgf1;
+        addFicha(_color, true, 1, posXP1, posYP2);
+
+        /* _posX = canvasWidth - SIZE_FIG / 2 - Math.round(Math.random() * circlesWidth);
+        _posY = canvasHeight - SIZE_FIG / 2 - Math.round(Math.random() * circlesHeight); */
+        _color = imgf2;
+        addFicha(_color, true, 2, posXP2, posYP2);
     }
 
     //crear las 2 fichas que voy a mostrar en la zona "Turno de:"
-    addFicha(urlFicha2, true, 1, posXP1, posYP2);
+    addFicha(imgf1, true, 1, posXP1, posYP2);
     id_P1 = getFigureByCoord(posXP1, posYP1);
-    figuras[id_P1].setIsClickable(false);
-    figuras[id_P1].setHighlighted(true);
+    /* figures[id_P1].setIsClickable(false);
+    figures[id_P1].setHighlighted(true); */
 
-    addFicha(urlFicha1Player2, true, 2, posXP2, posYP2);
+    addFicha(imgf2, true, 2, posXP2, posYP2);
     id_P2 = getFigureByCoord(posXP2, posYP2);
-    figuras[id_P2].setIsClickable(false);
-    figuras[id_P2].setHighlighted(true);
+    /* figures[id_P2].setIsClickable(false);
+    figures[id_P2].setHighlighted(true); */
 
     drawFigures();
 
@@ -131,25 +141,30 @@ function iniciar(){
     canvas.addEventListener("mousedown", onmousedown, false);
     canvas.addEventListener("mousemove", onmousemove, false);
     canvas.addEventListener("mouseup", onmouseup, false);
+    console.log(figures);
 }
 
 //Mouse events
 function onmousedown(event) {
     isMouseDown = true;
+    let mousePos = getMousePos(event);
+    let x = mousePos.x;
+    let y = mousePos.y;
     if (lastClickedFigure != null) {
         lastClickedFigure.setHighlighted(false);
         lastClickedFigure = null;
     }
 
-    let clickedFigure = findClickedFigure(event.layerX, event.layerY);
+    let clickedFigure = findClickedFigure(x, y);
+    console.log(x);
     if (clickedFigure != null) {
         clickedFigure.setHighlighted(true);
         lastClickedFigure = clickedFigure;
     }
 
-    //Hizo click en reiniciar?
+    /* //Hizo click en reiniciar?
     if ((event.layerX >= btnReiniciarX) && (event.layerY <= btnReiniciarY)) {
-        figuras = [];
+        figures = [];
         iniciar();
     }
 
@@ -157,7 +172,7 @@ function onmousedown(event) {
     if ((event.layerX >= btnSmallX) && ((event.layerY <= btnSmallY) && (event.layerY > btnTableroY))) {
         boardCol = 6;
         boardFil = 6;
-        figuras = [];
+        figures = [];
         iniciar();
     }
 
@@ -165,7 +180,7 @@ function onmousedown(event) {
     if ((event.layerX >= btnMediumX) && ((event.layerY <= btnMediumY) && (event.layerY > btnSmallY))) {
         boardCol = 7;
         boardFil = 7;
-        figuras = [];
+        figures = [];
         iniciar();
     }
 
@@ -173,16 +188,19 @@ function onmousedown(event) {
     if ((event.layerX >= btnBigX) && ((event.layerY <= btnBigY) && (event.layerY > btnMediumY))) {
         boardCol = 8;
         boardFil = 8;
-        figuras = [];
+        figures = [];
         iniciar();
-    }
+    } */
 
     drawFigures();
 }
 
 function onmousemove(event) {
+    let mousePos = getMousePos(event);
+    let x = mousePos.x;
+    let y = mousePos.y;
     if (isMouseDown && lastClickedFigure != null) {
-        lastClickedFigure.setPosition(event.layerX, event.layerY);
+        lastClickedFigure.setPosition(x, y);
         drawFigures();
         if (lastClickedFigure != null) {
             lastClickedFigure.draw(ctx);
@@ -209,36 +227,56 @@ function onmouseup(event) {
     drawFigures();
 }
 
-//Dibujar figuras..
-function addCirculo(x, y){
-    let color = "white";
-    let circulo = new Circulo(x, y, SIZE_FIG, SIZE_FIG, SIZE_FIG/2, color, ctx);
-    figuras.push(circulo); 
+function getMousePos(event) {
+    let ClientRect = canvas.getBoundingClientRect();
+    return { //objeto
+        x: Math.round(event.clientX - ClientRect.left), //canvas.offsetLeft
+        y: Math.round(event.clientY - ClientRect.top) //canvas.offsetTop
+    }
 }
 
-function addFicha(_color, _turn, _player, _posX, _posY){
-    let player = _player;
-    let posX = _posX;
-    let posY = _posY;
-    let color = _color;
-    let ficha = new Ficha(player, _turn, posX, posY, (SIZE_FIG/2), color, ctx);
-    figuras.push(ficha);
+/* function isTokenInsideDroppingZone(figura) {
+    let x = figura.getPosX();
+    let y = figura.getPosY();
+    for (let px = 0; px < boardFil; px++) {
+        for (let py = 0; py < boardCol; py++) {
+            dropWidth += SIZE_FIG;
+
+            let isInside = !(x < px || x > px + SIZE_FIG || y < py || y > py + SIZE_FIG);
+            //Ubica la ficha en el centro de la columna de la "Zona Soltar";
+            if (isInside == true) {
+                figura.setPosition(px, py);
+            }
+            return isInside;
+        }
+    }
+} */
+
+//Dibujar figures..
+function addCirculo(x, y) {
+    let color = urlTab;
+    let circulo = new Circulo(x, y, SIZE_FIG, SIZE_FIG, color, ctx);
+    figures.push(circulo);
 }
 
-function addZonaSoltar(x, y){
-    let color = urlDropArrow;
-    let zona = new zonaSoltar((x-25), (-30), SIZE_FIG, boardHeight - (boardFil * SIZE_FIG), color, ctx);
-    figuras.push(zona);
+function addFicha(_color, _turn, _player, _posX, _posY) {
+    let ficha = new Ficha(_player, _turn, _posX, _posY, SIZE_FIG / 2, _color, ctx);
+    figures.push(ficha);
+}
+
+function addZonaSoltar(x, y) {
+    let zona = new ZonaSoltar(x, y, SIZE_FIG, SIZE_FIG /* boardHeight - (boardFil * SIZE_FIG) */ , 0, ctx);
+    figures.push(zona);
 }
 
 //Funciones auxiliares
 
 function drawFigures() {
     clearCanvas();
-    addButtonsAndTexts();
-    for (let i = 0; i < figuras.length; i++) {
-        if (figuras[i] != lastClickedFigure) {
-            figuras[i].draw(ctx);
+    /* addButtonsAndTexts(); */
+    for (let i = 0; i < figures.length; i++) {
+        if (figures[i] != lastClickedFigure) {
+            figures[i].draw(ctx);
         }
     }
     if (lastClickedFigure != null) {
@@ -246,32 +284,31 @@ function drawFigures() {
     }
 }
 
-function clearCanvas(){
-    if(background.src === ""){
+function clearCanvas() {
+    if (background.src === "") {
         background.src = urlBackground;
-        let cargarImg = function () {
+        let cargarImg = function() {
             ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
         }
         background.onload = cargarImg.bind(this);
-    }
-    else{
+    } else {
         ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
     }
 }
 
-function addButtonsAndTexts(){
+/* function addButtonsAndTexts() {
     ctx.font = "30px Arial";
     ctx.fillText("Turno de: ", 20, 60);
 
     ctx.font = "25px Arial";
     ctx.fillText("-reiniciar-", btnReiniciarX, btnReiniciarY);
 
-}
+} */
 
 //Clickear tablero/imagen para empezar el juego.
 function findClickedFigure(x, y) {
-    for (let index = 0; index < figuras.length; index++) {
-        const element = figuras[index];
+    for (let index = 0; index < figures.length; index++) {
+        const element = figures[index];
         if (element.isPointedInside(x, y)) {
             return element;
         }
@@ -280,13 +317,13 @@ function findClickedFigure(x, y) {
 
 //Si una ficha fue soltada arriba del tablero la corro para que no estorbe!
 function isInBoardZone(token) {
-    for (let i = 0; i < figuras.length; i++) {
-        const element = figuras[i];
+    for (let i = 0; i < figures.length; i++) {
+        const element = figures[i];
         if (element.isTokenInside(token.getPosX(), token.getPosY())) {
             //quizas mejora: reubicar la ficha en la zona de pilita de fichas original (izq o derecha)
             token.setPosition(
-                figuras[i].getPosX() -
-                (figuras[i].getPosX() - token.getPosX()),
+                figures[i].getPosX() -
+                (figures[i].getPosX() - token.getPosX()),
                 boardHeight + SIZE_FIG
             );
             return true;
@@ -296,26 +333,19 @@ function isInBoardZone(token) {
 }
 
 //Devuelvo el "id" de una figura en (x, y)
-function getFigureByCoord(x, y){
-    for(let i = 0; i < figuras.length; i++){
-        if(figuras[i].getPosX() == x && figuras[i].getPosY() == y){
+function getFigureByCoord(x, y) {
+    for (let i = 0; i < figures.length; i++) {
+        if (figures[i].getPosX() == x && figures[i].getPosY() == y) {
             return i;
         }
     }
     return null;
 }
 
-function endGame(){
-    for(let i = 0; i < figuras.length; i++){
-        figuras[i].setIsClickable(false);
+function endGame() {
+    for (let i = 0; i < figures.length; i++) {
+        figures[i].setIsClickable(false);
     }
-    figuras[id_P1].setHighlighted(false);
-    figuras[id_P2].setHighlighted(false);
+    figures[id_P1].setHighlighted(false);
+    figures[id_P2].setHighlighted(false);
 }
-
-let boton = document.querySelector("#boton4");
-
-//Cada vez que clickeo cambio el tablero..
-boton.addEventListener("click", function (){
-    
-});

@@ -24,6 +24,7 @@ header {
     justify-content: space-between;
 }
 
+
 /*NAV*/
 
 .logo {
@@ -194,16 +195,18 @@ header {
     color: white;
 }
 
+
 /* juego */
 
-.juego{
+.juego {
     padding-top: 60px;
     display: flex;
-    gap: 120px;
+    /* gap: 120px; */
+    gap: 30px;
     justify-content: center;
 }
 
-.ficha1{
+.ficha1 {
     border: black 1px solid;
     border-radius: 50px;
     width: 45px;
@@ -211,33 +214,43 @@ header {
     cursor: pointer;
 }
 
-.ficha2{
+.ficha2 {
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 50px; 
+    border-radius: 50px;
     width: 45px;
-    height: 45px;   
+    height: 45px;
     cursor: pointer;
 }
 
-.ficha3{
+.ficha3 {
     border: solid 1px black;
-    border-radius: 50px; 
+    border-radius: 50px;
     width: 45px;
-    height: 45px;   
+    height: 45px;
     cursor: pointer;
 }
 
-.canvas-container{
+.img-jugador1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-jugador2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas-container {
     justify-content: center;
 }
 
-.botones{
+.botones {
     display: flex;
     justify-content: center;
 }
 
-.botones button{
+.botones button {
     color: black;
     cursor: pointer;
 }

@@ -1,8 +1,8 @@
 "use strict";
 
-class Figura{
-    
-    constructor(posX, posY, fill, context){
+class Figura {
+
+    constructor(posX, posY, fill, context) {
         this.posX = posX;
         this.posY = posY;
         this.fill = fill;
@@ -11,62 +11,62 @@ class Figura{
     }
 
     //Getters
-    getPosition(){
+    getPosition() {
         return {
             x: this.getPosX(),
             y: this.getPosY()
         };
     }
 
-    getPosX(){
+    getPosX() {
         return this.posX;
     }
 
-    getPosY(){
+    getPosY() {
         return this.posY;
     }
 
-    getFill(){
+    getFill() {
         return this.fill;
     }
 
     //Setters
 
-    setFill(fill){
+    setFill(fill) {
         this.fill = fill;
     }
 
-    setPosition(x, y){
+    setPosition(x, y) {
         this.posX = x;
         this.posY = y;
     }
 
-    setHighlighted(value){
+    setHighlighted(value) {
         this.highlighted = value;
     }
 
-    setHighlightedStyle(style){
+    setHighlightedStyle(style) {
         this.highlightedStyle = style;
     }
 
     //Metodos abstractos
 
-    draw(){
-        this.context.fillStyle = this.fill;
+    draw() {
+        /* this.context.fillStyle = this.fill; */
     }
 
-    setIsClickable(param){}
+    setIsClickable(param) {}
 
-    isPointedInside(x, y){}
+    isPointedInside(x, y) {}
 
-    isTokenInsideDroppingZone(figura){}
+    isTokenInsideDroppingZone(figura) {}
 
-    isTokenInside(figura){}
+    isTokenInside(figura) {}
 
-    alreadyHasCircleInside(){}
+    alreadyHasCircleInside() {}
 
-    getPlayer(){}
+    getPlayer() {}
 
-    setTurn(param){}
+    setTurn(param) {}
 
 }

@@ -1,9 +1,8 @@
-"use strict";
 //Checkeos de donde ubicar ficha
 //Checkeo si una ficha fue soltada en la zona habilitada para realizar la jugada.
 function isInDroppingZone(lastDroppedFigure) {
-    for (let index = 0; index < figuras.length; index++) {
-        let token = figuras[index];
+    for (let index = 0; index < figures.length; index++) {
+        let token = figures[index];
         if (token.isTokenInsideDroppingZone(lastDroppedFigure)) {
             if (placeDroppedToken(lastDroppedFigure)) {
                 switchPlayerTurns(lastDroppedFigure)
@@ -18,20 +17,20 @@ function isInDroppingZone(lastDroppedFigure) {
 function placeDroppedToken(lastDroppedFigure) {
     let dropped = false;
     //itero de atras para adelante para checkear de abajo hacia arriba si hay fichas en el tablero
-    for (let index = figuras.length - 1; index >= 0; index--) {
+    for (let index = figures.length - 1; index >= 0; index--) {
         //me aseguro de estar checkeando unicamente celdas del tablero y no una ficha random en la misma altura por ejemplo
         if (
-            figuras[index].getPosX() == lastDroppedFigure.getPosX() && // (figura en la misma columna que la ficha)
-            figuras[index].getPosY() > lastDroppedFigure.getPosY() && // (figura no tiene que estar arriba del tablero) 
-            figuras[index].getPosY() < boardHeight + boardFil * (SIZE_FIG + 1) //(la figura no puede estar abajo del tablero)
+            figures[index].getPosX() == lastDroppedFigure.getPosX() && // (figura en la misma columna que la ficha)
+            figures[index].getPosY() > lastDroppedFigure.getPosY() && // (figura no tiene que estar arriba del tablero) 
+            figures[index].getPosY() < boardHeight + boardFil * (SIZE_FIG + 1) //(la figura no puede estar abajo del tablero)
         ) {
             //celda vacia? -> si: ubico la ficha en esa nueva pos 
-            if (!figuras[index].alreadyHasCircleInside()) {
+            if (!figures[index].alreadyHasCircleInside()) {
                 dropped = true;
                 lastDroppedFigure.setIsClickable(false);
                 lastDroppedFigure.setPosition(
-                    figuras[index].getPosX() + SIZE_FIG / 2,
-                    figuras[index].getPosY() + SIZE_FIG / 2
+                    figures[index].getPosX() + SIZE_FIG / 2,
+                    figures[index].getPosY() + SIZE_FIG / 2
                 );
                 tokensPlayed++;
                 return true;
@@ -46,22 +45,26 @@ function placeDroppedToken(lastDroppedFigure) {
     }
 }
 
+
 function switchPlayerTurns(lastDroppedFigure) {
     let player = lastDroppedFigure.getPlayer();
-    for (let i = 0; i < figuras.length; i++) {
-        if (figuras[i].getPlayer() == player) {
-            figuras[i].setTurn(false);
-            figuras[id_P1].setHighlighted(true);
-            figuras[id_P2].setHighlighted(false);
+    for (let i = 0; i < figures.length; i++) {
+        if (figures[i].getPlayer() == player) {
+            figures[i].setTurn(false);
+            figures[id_P1].setHighlighted(true);
+            figures[id_P2].setHighlighted(false);
 
         } else {
-            figuras[i].setTurn(true);
-            figuras[id_P1].setHighlighted(false);
-            figuras[id_P2].setHighlighted(true);
+            figures[i].setTurn(true);
+            figures[id_P1].setHighlighted(false);
+            figures[id_P2].setHighlighted(true);
         }
     }
 }
 
+//#endregion
+
+//#region checkeos de game-over
 //Checkear despues de cada ficha colocada si se terminó el juego
 function isGameOver(lastFigureInserted) {
     if (
@@ -77,6 +80,7 @@ function isGameOver(lastFigureInserted) {
     }
     return false;
 }
+
 
 function isTieGame() {
     if (tokensPlayed == NUM_FIG) {
@@ -114,6 +118,7 @@ function isWinnerByFil(lastFigureInserted) {
     }
 }
 
+
 function isWinnerByDiagonal(lastFigureInserted) {
     let x = lastClickedFigure.getPosX() - SIZE_FIG / 2; //posX de la celda que contiene la ultima ficha insertada!
     let y = lastFigureInserted.getPosY() - SIZE_FIG / 2; //posY de la celda que contiene la ultima ficha insertada!
@@ -141,18 +146,20 @@ function isWinnerByDiagonal(lastFigureInserted) {
     }
 }
 
-//Funciones de los 7 posibles casos ganadores
+//#endregion
+
+//#region funciones recursivas de los 7 posibles casos ganadores
 
 function recuCol(x, y, player, lastFigureInserted, paintWinner) {
     //Estoy dentro del tablero?
     if (y < boardHeight) {
         let indexCell = getFigureByCoord(x, y);
         //checkeo si es el mismo jug
-        if (figuras[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
+        if (figures[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
             if (paintWinner == true) {
                 indexCell = getFigureByCoord(x, y);
-                figuras[indexCell].setHighlighted(true);
-                figuras[indexCell].setHighlightedStyle("green");
+                figures[indexCell].setHighlighted(true);
+                figures[indexCell].setHighlightedStyle("green");
             }
             return recuCol(x, y + SIZE_FIG, player, lastFigureInserted, paintWinner) + 1;
         }
@@ -166,11 +173,11 @@ function recuRowLeft(x, y, player, lastFigureInserted, paintWinner) {
     if (x > boardWidth) {
         //checkeo si es el mismo jug
         let indexCell = getFigureByCoord(x, y);
-        if (figuras[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
+        if (figures[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
             if (paintWinner == true) {
                 indexCell = getFigureByCoord(x + (SIZE_FIG / 2), y + (SIZE_FIG / 2));
-                figuras[indexCell].setHighlighted(true);
-                figuras[indexCell].setHighlightedStyle("green");
+                figures[indexCell].setHighlighted(true);
+                figures[indexCell].setHighlightedStyle("green");
             }
             return recuRowLeft(x - SIZE_FIG, y, player, lastFigureInserted, paintWinner) + 1;
         }
@@ -184,11 +191,11 @@ function recuRowRight(x, y, player, lastFigureInserted, paintWinner) {
     if (x <= boardWidth + (SIZE_FIG * boardCol)) {
         //checkeo si es el mismo jug
         let indexCell = getFigureByCoord(x, y);
-        if (figuras[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
+        if (figures[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
             if (paintWinner == true) {
                 indexCell = getFigureByCoord(x + (SIZE_FIG / 2), y + (SIZE_FIG / 2));
-                figuras[indexCell].setHighlighted(true);
-                figuras[indexCell].setHighlightedStyle("green");
+                figures[indexCell].setHighlighted(true);
+                figures[indexCell].setHighlightedStyle("green");
             }
             return recuRowRight(x + SIZE_FIG, y, player, lastFigureInserted, paintWinner) + 1;
         }
@@ -197,16 +204,17 @@ function recuRowRight(x, y, player, lastFigureInserted, paintWinner) {
     return 0;
 }
 
+
 function recuDiagRightUp(x, y, player, lastFigureInserted, paintWinner) {
     //Estoy dentro del tablero?
     if ((y >= boardHeight - (boardFil * SIZE_FIG)) && (x <= (boardWidth + (boardCol * SIZE_FIG)))) {
         //checkeo si es el mismo jug
         let indexCell = getFigureByCoord(x, y);
-        if (figuras[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
+        if (figures[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
             if (paintWinner == true) {
                 indexCell = getFigureByCoord(x + (SIZE_FIG / 2), y + (SIZE_FIG / 2));
-                figuras[indexCell].setHighlighted(true);
-                figuras[indexCell].setHighlightedStyle("green");
+                figures[indexCell].setHighlighted(true);
+                figures[indexCell].setHighlightedStyle("green");
             }
             return recuDiagRightUp(x + SIZE_FIG, y - SIZE_FIG, player, lastFigureInserted, paintWinner) + 1;
         }
@@ -220,11 +228,11 @@ function recuDiagRightDown(x, y, player, lastFigureInserted, paintWinner) {
     if ((y < boardHeight) && (x <= (boardWidth + (boardCol * SIZE_FIG)))) {
         //checkeo si es el mismo jug
         let indexCell = getFigureByCoord(x, y);
-        if (figuras[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
+        if (figures[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
             if (paintWinner == true) {
                 indexCell = getFigureByCoord(x + (SIZE_FIG / 2), y + (SIZE_FIG / 2));
-                figuras[indexCell].setHighlighted(true);
-                figuras[indexCell].setHighlightedStyle("green");
+                figures[indexCell].setHighlighted(true);
+                figures[indexCell].setHighlightedStyle("green");
             }
             return recuDiagRightDown(x + SIZE_FIG, y + SIZE_FIG, player, lastFigureInserted, paintWinner) + 1;
         }
@@ -238,11 +246,11 @@ function recuDiagLeftDown(x, y, player, lastFigureInserted, paintWinner) {
     if ((y < boardHeight) && (x > boardWidth)) {
         //checkeo si es el mismo jug
         let indexCell = getFigureByCoord(x, y);
-        if (figuras[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
+        if (figures[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
             if (paintWinner == true) {
                 indexCell = getFigureByCoord(x + (SIZE_FIG / 2), y + (SIZE_FIG / 2));
-                figuras[indexCell].setHighlighted(true);
-                figuras[indexCell].setHighlightedStyle("green");
+                figures[indexCell].setHighlighted(true);
+                figures[indexCell].setHighlightedStyle("green");
             }
             return recuDiagLeftDown(x - SIZE_FIG, y + SIZE_FIG, player, lastFigureInserted, paintWinner) + 1;
         }
@@ -256,11 +264,11 @@ function recuDiagLeftUp(x, y, player, lastFigureInserted, paintWinner) {
     if ((y >= boardHeight - (boardFil * SIZE_FIG) && (x > boardWidth))) {
         //checkeo si es el mismo jug
         let indexCell = getFigureByCoord(x, y);
-        if (figuras[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
+        if (figures[indexCell].getPlayer() == lastFigureInserted.getPlayer()) {
             if (paintWinner == true) {
                 indexCell = getFigureByCoord(x + (SIZE_FIG / 2), y + (SIZE_FIG / 2));
-                figuras[indexCell].setHighlighted(true);
-                figuras[indexCell].setHighlightedStyle("green");
+                figures[indexCell].setHighlighted(true);
+                figures[indexCell].setHighlightedStyle("green");
             }
             return recuDiagLeftUp(x - SIZE_FIG, y - SIZE_FIG, player, lastFigureInserted, paintWinner) + 1;
         }
