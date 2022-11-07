@@ -15,7 +15,7 @@ let boardFil = 6;
 let NUM_FIG = boardCol * boardFil;
 const SIZE_FIG = 50;
 const SIZE_FICHA = 75;
-const WINNER_NUMBER = 4; //Cantidad de fichas iguales para ganar.
+let WINNER_NUMBER = 4; //Cantidad de fichas iguales para ganar.
 
 //imagenes
 const urlBackground = "./img/background.jpg";
@@ -65,6 +65,12 @@ let btnMediumY = btnSmallY + 30;
 
 let btnBigX = canvasWidth - 90;
 let btnBigY = btnMediumY + 30;
+
+let btnReiniciar = document.querySelector("#btn-reiniciar");
+let btnTablero4 = document.querySelector("#btn-4");
+let btnTablero5 = document.querySelector("#btn-5");
+let btnTablero6 = document.querySelector("#btn-6");
+
 
 //Variables generales
 let figures = [];
@@ -138,6 +144,9 @@ function iniciar() {
     drawFigures();
 
     //Iniciar eventos...
+    btnTablero4.addEventListener("click", enLinea4);
+    btnTablero5.addEventListener("click", enLinea5);
+    btnTablero6.addEventListener("click", enLinea6);
     canvas.addEventListener("mousedown", onmousedown, false);
     canvas.addEventListener("mousemove", onmousemove, false);
     canvas.addEventListener("mouseup", onmouseup, false);
@@ -348,4 +357,32 @@ function endGame() {
     }
     figures[id_P1].setHighlighted(false);
     figures[id_P2].setHighlighted(false);
+}
+
+function reiniciar(){
+    figures = [];
+    iniciar();
+}
+
+function enLinea4(){
+    boardCol = 6;
+    boardFil = 6;
+    figures = [];
+    iniciar();
+}
+
+function enLinea5(){
+    boardCol = 7;
+    boardFil = 7;
+    figures = [];
+    WINNER_NUMBER = 5;
+    iniciar();
+}
+
+function enLinea6(){
+    boardCol = 8;
+    boardFil = 8;
+    figures = [];
+    WINNER_NUMBER = 6;
+    iniciar();
 }

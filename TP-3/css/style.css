@@ -254,3 +254,7 @@ header {
     color: black;
     cursor: pointer;
 }
+
+.botones button:hover{
+    background-color: red;
+}
