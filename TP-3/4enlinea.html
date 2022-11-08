@@ -132,37 +132,37 @@
                 </div>
             </div> -->
 
-            <div class="hero-title-play" id="hero-title-jugar-opciones">
-                <h1 class="titles">Fuego vs Agua</h1>
-                <div class="div-btns-play">
+            <div class="juego-opciones" id="jugar-opciones">
+                <h1>Pokemon: Agua vs Fuego</h1>
+                <div class="opciones-dif">
                     <div>
                         <input type="radio" name="dificultad" value="4" id="radio-facil" checked />
-                        <label for="radio-facil">Fácil</label>
+                        <label for="radio-facil">Facil</label>
                         <input type="radio" name="dificultad" value="5" id="radio-moderada" />
-                        <label for="radio-moderada">Moderada</label>
+                        <label for="radio-moderada">Normal</label>
                         <input type="radio" name="dificultad" value="6" id="radio-dificil" />
                         <label for="radio-dificil">Difícil</label>
                         <input type="radio" name="dificultad" value="7" id="radio-epica" />
-                        <label for="radio-epica">Épica</label>
+                        <label for="radio-epica">Muy Dificil</label>
                     </div>
 
 
                     <div class="jugador-seleccion">
                         <div class="text-jugador" id="text-jugador1">Agua: </div>
                         <div class="leftside">
-                            <label class="labelexpanded">
+                            <label class="labelexpanded2">
                                 <input type="radio" name="targetgroup1" checked value="agua1">
                                 <div class="radio-btns"> <img src="img/agua1.png" />
                                 </div>
                                 </input>
                             </label>
-                            <label class="labelexpanded">
-                                <input type="radio" name="targetgroup1" disabled value="agua2">
+                            <label class="labelexpanded2">
+                                <input type="radio" name="targetgroup1"  value="agua2">
                                 <div class="radio-btns"> <img src="img/agua2.png">
                                 </div>
                                 </input>
                             </label>
-                            <label class="labelexpanded">
+                            <label class="labelexpanded2">
                                 <input type="radio" name="targetgroup1" value="agua3">
                                 <div class="radio-btns"> <img src="img/agua3.png">
                                 </div>
@@ -175,7 +175,7 @@
                         <div class="text-jugador" id="text-jugador2">Fuego: </div>
                         <div class="leftside">
                             <label class="labelexpanded">
-                                <input type="radio" name="targetgroup2" disabled value="fuego1">
+                                <input type="radio" name="targetgroup2" value="fuego1">
                                 <div class="radio-btns"> <img src="img/fuego1.png" />
                                 </div>
                                 </input>
@@ -196,7 +196,7 @@
                     </div>
 
                     <div>
-                        <button class="btn-jugar" id="btn-play-start">Jugar</button>
+                        <button class="btn-jugar" id="btn-iniciar">Jugar</button>
                     </div>
                 </div>
             </div>
@@ -205,9 +205,9 @@
                 <div class="botones">
                     <div class="turno" id="turno-agua"></div>
                     <div class="time-return">
-                        <button id="btn-volver" type="submit">VOLVER</button>
+                        <button class="btn-canvas" id="btn-volver" type="submit">VOLVER</button>
                         <div class="timer"></div>
-                        <button class="btn-reiniciar" id="btn-reiniciar" type="submit">REINICIAR</button>
+                        <button class="btn-canvas" id="btn-reiniciar" type="submit">REINICIAR</button>
                     </div>
                     <div class="turno" id="turno-fuego"></div>
                 </div>

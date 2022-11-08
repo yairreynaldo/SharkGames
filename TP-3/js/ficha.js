@@ -23,6 +23,7 @@ class Ficha extends Figura {
         this.context.fill();
         this.context.stroke();
         this.context.drawImage(this.image, this.posX - 15, this.posY - 15, 30, 30);
+        /* this.context.drawImage(this.image, this.posX - 15, this.posY - 15, 30, 30); */
         this.context.closePath();
         /* this.context.clip(); */
         /* this.context.restore(); */

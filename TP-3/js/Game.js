@@ -2,41 +2,40 @@
 
 document.addEventListener("DOMContentLoaded", initPage);
 
+//Constantes
+const TIEMPO_JUEGO = 300;
+const SIZE_FIG = 50;
+/* const SIZE_FICHA = 75; */
+const colorAgua = "#00abfa";
+const colorFuego = "#FAC100";
+const urlBackground = "./img/background.jpg";
+const urlTab = "./img/poke.png";
+
+//variables canvas
 let canvas = document.querySelector('#myCanvas');
 /** @type {CanvasRenderingContext2D} */
 let ctx = canvas.getContext('2d');
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
-let background = new Image();
 
 //Dimensiones de la matriz del tablero.
-
 let boardCol;
 let boardFil;
 
-//Constantes
-const TIEMPO_JUEGO = 300;
+//variables tiempo
 let timer = TIEMPO_JUEGO;
 let timerId;
-let NUM_FIG = boardCol * boardFil;
-const SIZE_FIG = 50;
-/* const SIZE_FICHA = 75; */
-let WINNER_NUMBER = 4; //Cantidad de fichas iguales para ganar.
-const colorAgua = "lightblue";
-const colorFuego = "orange";
+
 
 //imagenes
-const urlBackground = "./img/background.jpg";
+let background = new Image();
+background.src = urlBackground;
 let imgf1 = new Image();
 let imgf2 = new Image();
 let ficha1;
 let ficha2;
-let urlFichaFuego; //"./img/fuego1.png";
-/* const urlFicha2 = "./img/ficha2.jpg"; */
-let urlFichaAgua; //"./img/agua2.png";
-/* const urlDropArrow = "./img/dropppp.png"; */
-/* const urlFicha = "./img/ficha12.jpg"; */
-const urlTab = "./img/poke.png";
+let urlFichaFuego;
+let urlFichaAgua;
 
 //coordenadas de inicio de fichas.
 const posXP1 = SIZE_FIG;
@@ -47,23 +46,17 @@ const posXP2 = canvasWidth - SIZE_FIG;
 const posYP2 = SIZE_FIG
 let id_P2 = null;
 
-//calculo de dimensiones de manera proporcional
 //coordenadas donde iniciar a dibujar las celdas del tablero.
 let boardWidth = (canvasWidth / 2) - (boardCol / 2) * SIZE_FIG - SIZE_FIG; //Centrar el canvas
 let boardHeight = canvasHeight - (SIZE_FIG * (boardFil + 1.5));
 
-//dimensiones de la zona donde se van a dibujar las fichas
-let circlesWidth = boardWidth;
-let circlesHeight = canvasHeight / 2;
 
-//coordenadas de la zona desde donde van a estar habilitadas las fichas para ser ubicadas
+//coordenadas de las zonas donde se sueltan las fichas
 let dropWidth = boardWidth;
 let dropHeight = boardHeight - SIZE_FIG;
 
-
+//turnos, resultado y reiniciar
 let btnReiniciar = document.querySelector("#btn-reiniciar");
-
-
 let result = document.querySelector(".resultado-canvas");
 let turnoAgua = document.querySelector("#turno-agua");
 let turnoFuego = document.querySelector("#turno-fuego");
@@ -74,66 +67,30 @@ let figures = [];
 let tokensPlayed;
 let lastClickedFigure = null;
 let isMouseDown = false;
+let WINNER_NUMBER = 4; //Cantidad de fichas iguales para ganar.
+let NUM_FIG = boardCol * boardFil;
 
 function initPage() {
 
 
-    //Controla que no se pueda seleccionar la misma ficha
-    let ff11 = document.getElementsByName('targetgroup1');
-    ff11.forEach(f => f.addEventListener("click", () => {
-        let ff22 = document.getElementsByName('targetgroup2');
-        for (let f22 of ff22) {
-            f22.disabled = false;
-            if (f22.value === f.value) {
-                f22.disabled = true;
-            }
-        }
-    }));
-
-    let ff22 = document.getElementsByName('targetgroup2');
-    ff22.forEach(f => f.addEventListener("click", () => {
-        let ff11 = document.getElementsByName('targetgroup1');
-        for (let f11 of ff11) {
-            f11.disabled = false;
-            if (f11.value === f.value) {
-                f11.disabled = true;
-            }
-        }
-    }));
-
+    //oculto el canvas
     let contentCanvas = document.querySelector(".canvas-container");
     contentCanvas.style.display = 'none';
     canvas.style.display = 'none';
 
-    let heroTitleJugarOpciones = document.querySelector("#hero-title-jugar-opciones");
-    heroTitleJugarOpciones.style.display = 'block';
+    //muestro las opciones
+    let jugarOpciones = document.querySelector("#jugar-opciones");
+    jugarOpciones.style.display = 'block';
 
-    //Se inicia el juego. Boton jugar.
-    let btnPlayStart = document.querySelector("#btn-play-start");
-    btnPlayStart.addEventListener("click", function() {
-        //Display solo canvas
-        heroTitleJugarOpciones.style.display = 'none';
+    //doy funcionalidad al boton que inicia el juego
+    let btnIniciar = document.querySelector("#btn-iniciar");
+    btnIniciar.addEventListener("click", function() {
+        jugarOpciones.style.display = 'none';
         contentCanvas.style.display = 'block';
         canvas.style.display = 'block';
 
-        /* canvas.width = CANVAS_WIDTH;
-        canvas.height = CANVAS_HEIGHT; */
 
-        //Ayuda para ver por donde esta el mouse
-        //Descomentar para ver coordenadas actaules del mouse
-        /*
-        var output = document.getElementById("output");
-        canvas.addEventListener("mousemove", function (evt) {
-            var mousePos = getMousePos(evt);
-            marcarCoords(output, mousePos.x, mousePos.y)
-        }, false);
-        canvas.addEventListener("mouseout", function (evt) {
-            limpiarCoords(output);
-        }, false);
-        */
-
-        //Opciones seleccionadas
-        //Dificultad
+        //selecciono la dificultad y cambio el numero de fichas en linea para ganar
         let dificultades = document.getElementsByName('dificultad');
         for (let d of dificultades) {
             if (d.checked) {
@@ -143,9 +100,9 @@ function initPage() {
             }
         }
 
-        //Fuego
 
-        //Ficha
+        //asigno la imagen correcta a las fichas
+        //Agua
         let fichas1 = document.getElementsByName('targetgroup1');
         for (let ficha of fichas1) {
             if (ficha.checked) {
@@ -155,8 +112,7 @@ function initPage() {
 
         urlFichaAgua = "./img/" + ficha1 + ".png";
 
-        //Agua
-        //Ficha
+        //Fuego
         let fichas2 = document.getElementsByName('targetgroup2');
         for (let ficha of fichas2) {
             if (ficha.checked) {
@@ -170,23 +126,26 @@ function initPage() {
         iniciar();
     });
 
+    //doy funcionalidad al boton para volver a las opciones
     let btnGameOut = document.querySelector("#btn-volver");
     btnGameOut.addEventListener("click", function(event) {
-        heroTitleJugarOpciones.style.display = 'block';
+        jugarOpciones.style.display = 'block';
         contentCanvas.style.display = 'none';
         canvas.style.display = 'none';
+        result.style.display = 'none';
         figures = [];
     });
 
 
 
     //Iniciar juego...
-    /* iniciar(); */
 
     function iniciar() {
 
+        /* ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight); */
+
+        //Reescribo variables necesarias.
         timer = TIEMPO_JUEGO;
-        //Reescribo los valores originales del juego.
         tokensPlayed = 0;
         turnoAgua.innerHTML = "";
         turnoFuego.innerHTML = "";
@@ -197,34 +156,13 @@ function initPage() {
         dropWidth = boardWidth;
         dropHeight = boardHeight - SIZE_FIG;
 
-        circlesWidth = boardWidth;
-        circlesHeight = canvasHeight / 2;
 
         imgf1.src = urlFichaAgua;
         imgf2.src = urlFichaFuego;
 
-        //Creo las figures...
+        //Creacion de figuras
 
-        /*   switch (WINNER_NUMBER) {
-              case 4:
-                  boardFil = 6;
-                  boardCol = 6;
-                  break;
-              case 5:
-                  boardFil = 7;
-                  boardCol = 7;
-                  break;
-              case 6:
-                  boardFil = 8;
-                  boardCol = 8;
-                  break;
-              case 7:
-                  boardFil = 9;
-                  boardCol = 9;
-                  break;
-          } */
-
-        //Matriz del tablero
+        //creo la matriz del tablero
         for (let x = 0; x < boardFil; x++) {
             for (let y = 0; y < boardCol; y++) {
                 boardWidth += SIZE_FIG;
@@ -242,6 +180,7 @@ function initPage() {
 
         /* let posA = posYP1;
         let posF = posYP2; */
+
         //Crear las fichas de cada jugador
         for (let i = 0; i < NUM_FIG / 2; i++) {
             /*  let _posX = SIZE_FIG / 2 + Math.round(Math.random() * circlesWidth);
@@ -257,16 +196,9 @@ function initPage() {
             /* posF = posF + 5; */
         }
 
-        //crear las 2 fichas que voy a mostrar en la zona "Turno de:"
-        /* addFicha(imgf1, true, 1, posXP1, posYP2); */
+        //ubicacion de las fichas"
         id_P1 = getFigureByCoord(posXP1, posYP1);
-        /* figures[id_P1].setIsClickable(false);
-        figures[id_P1].setHighlighted(true); */
-
-        /* addFicha(imgf2, true, 2, posXP2, posYP2); */
         id_P2 = getFigureByCoord(posXP2, posYP2);
-        /* figures[id_P2].setIsClickable(false);
-        figures[id_P2].setHighlighted(true); */
 
         drawFigures();
 
@@ -277,11 +209,14 @@ function initPage() {
         canvas.addEventListener("mouseup", onmouseup, false);
         console.log(figures);
 
+        //tiempo
         clearTimeout(timerId);
         timeControl();
     }
 
     //Mouse events
+
+    //lo que pasa cuando clickeo en la ficha
     function onmousedown(event) {
         isMouseDown = true;
         let mousePos = getMousePos(event);
@@ -299,39 +234,11 @@ function initPage() {
             lastClickedFigure = clickedFigure;
         }
 
-        /* //Hizo click en reiniciar?
-        if ((event.layerX >= btnReiniciarX) && (event.layerY <= btnReiniciarY)) {
-            figures = [];
-            iniciar();
-        }
-    
-        //Hizo click en tablero de 6X6?
-        if ((event.layerX >= btnSmallX) && ((event.layerY <= btnSmallY) && (event.layerY > btnTableroY))) {
-            boardCol = 6;
-            boardFil = 6;
-            figures = [];
-            iniciar();
-        }
-    
-        //Hizo click en tablero de 7X7?
-        if ((event.layerX >= btnMediumX) && ((event.layerY <= btnMediumY) && (event.layerY > btnSmallY))) {
-            boardCol = 7;
-            boardFil = 7;
-            figures = [];
-            iniciar();
-        }
-    
-        //Hizo click en tablero de 8X8?
-        if ((event.layerX >= btnBigX) && ((event.layerY <= btnBigY) && (event.layerY > btnMediumY))) {
-            boardCol = 8;
-            boardFil = 8;
-            figures = [];
-            iniciar();
-        } */
 
         drawFigures();
     }
 
+    //lo que pasa cuando muevo la ficha
     function onmousemove(event) {
         let mousePos = getMousePos(event);
         let x = mousePos.x;
@@ -345,6 +252,7 @@ function initPage() {
         }
     }
 
+    //lo que pasa cuando suelto la ficha
     function onmouseup(event) {
         isMouseDown = false;
         if (lastClickedFigure != null) {
@@ -364,6 +272,7 @@ function initPage() {
         drawFigures();
     }
 
+    //ubicar la pos del mouse
     function getMousePos(event) {
         let ClientRect = canvas.getBoundingClientRect();
         return { //objeto
@@ -372,22 +281,6 @@ function initPage() {
         }
     }
 
-    /* function isTokenInsideDroppingZone(figura) {
-        let x = figura.getPosX();
-        let y = figura.getPosY();
-        for (let px = 0; px < boardFil; px++) {
-            for (let py = 0; py < boardCol; py++) {
-                dropWidth += SIZE_FIG;
-    
-                let isInside = !(x < px || x > px + SIZE_FIG || y < py || y > py + SIZE_FIG);
-                //Ubica la ficha en el centro de la columna de la "Zona Soltar";
-                if (isInside == true) {
-                    figura.setPosition(px, py);
-                }
-                return isInside;
-            }
-        }
-    } */
 
     //Funcion encargada de controlar el tiempo de partida
     function timeControl() {
@@ -424,8 +317,8 @@ function initPage() {
         figures.push(zona);
     }
 
-    //Funciones auxiliares
 
+    //muestro las figuras
     function drawFigures() {
         clearCanvas();
         /* addButtonsAndTexts(); */
@@ -439,28 +332,14 @@ function initPage() {
         }
     }
 
+    //limpio el canvas
     function clearCanvas() {
-        if (background.src === "") {
-            background.src = urlBackground;
-            let cargarImg = function() {
-                ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
-            }
-            background.onload = cargarImg.bind(this);
-        } else {
-            ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
-        }
+        ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
     }
 
-    /* function addButtonsAndTexts() {
-        ctx.font = "30px Arial";
-        ctx.fillText("Turno de: ", 20, 60);
-    
-        ctx.font = "25px Arial";
-        ctx.fillText("-reiniciar-", btnReiniciarX, btnReiniciarY);
-    
-    } */
 
-    //Clickear tablero/imagen para empezar el juego.
+
+    //Encuentra la figura clickeada
     function findClickedFigure(x, y) {
         for (let index = 0; index < figures.length; index++) {
             const element = figures[index];
@@ -470,12 +349,11 @@ function initPage() {
         }
     }
 
-    //Si una ficha fue soltada arriba del tablero la corro para que no estorbe!
+    //Corro la ficha si se suelta arriba del tablero
     function isInBoardZone(token) {
         for (let i = 0; i < figures.length; i++) {
             const element = figures[i];
             if (element.isTokenInside(token.getPosX(), token.getPosY())) {
-                //quizas mejora: reubicar la ficha en la zona de pilita de fichas original (izq o derecha)
                 token.setPosition(
                     figures[i].getPosX() -
                     (figures[i].getPosX() - token.getPosX()),
@@ -497,6 +375,7 @@ function initPage() {
         return null;
     }
 
+    //fin del juego por victoria
     function endGame() {
         for (let i = 0; i < figures.length; i++) {
             figures[i].setIsClickable(false);
@@ -509,6 +388,7 @@ function initPage() {
         result.innerHTML = 'Ganó ' + win.getPlayer();
     }
 
+    //fin del juego por empate
     function endGameEmpate() {
         for (let i = 0; i < figures.length; i++) {
             figures[i].setIsClickable(false);
@@ -519,6 +399,7 @@ function initPage() {
         result.innerHTML = 'Juego Empatado ';
     }
 
+    //reinicio de juego
     function reiniciar() {
         figures = [];
         result.style.display = 'none';
@@ -579,6 +460,7 @@ function initPage() {
     }
 
 
+    //cambio de turno despues de soltar la ficha
     function switchPlayerTurns(lastDroppedFigure) {
         let player = lastDroppedFigure.getPlayer();
         for (let i = 0; i < figures.length; i++) {
@@ -602,9 +484,8 @@ function initPage() {
         }
     }
 
-    //#endregion
 
-    //#region checkeos de game-over
+    //chekeos de fin de juego
     //Checkear despues de cada ficha colocada si se terminó el juego
     function isGameOver(lastFigureInserted) {
         if (
@@ -615,19 +496,20 @@ function initPage() {
             return true;
         }
         if (isTieGame()) {
-            /* alert("Juego Empatado!"); */
             endGameEmpate();
         }
         return false;
     }
 
 
+    //confirmo si es empate
     function isTieGame() {
         if (tokensPlayed == NUM_FIG) {
             return true;
         }
     }
 
+    //confirmo si se gano por fichas en linea en columna
     function isWinnerByCol(lastFigureInserted) {
         let x = lastFigureInserted.getPosX();
         let y = lastFigureInserted.getPosY();
@@ -641,6 +523,7 @@ function initPage() {
         }
     }
 
+    //confirmo si se gano por fichas en linea en fila
     function isWinnerByFil(lastFigureInserted) {
         let x = lastClickedFigure.getPosX() - SIZE_FIG / 2; //posX de la celda que contiene la ultima ficha insertada!
         let y = lastFigureInserted.getPosY() - SIZE_FIG / 2; //posY de la celda que contiene la ultima ficha insertada!
@@ -659,6 +542,7 @@ function initPage() {
     }
 
 
+    //confirmo si se gano por fichas en linea en diagonal
     function isWinnerByDiagonal(lastFigureInserted) {
         let x = lastClickedFigure.getPosX() - SIZE_FIG / 2; //posX de la celda que contiene la ultima ficha insertada!
         let y = lastFigureInserted.getPosY() - SIZE_FIG / 2; //posY de la celda que contiene la ultima ficha insertada!
@@ -686,9 +570,8 @@ function initPage() {
         }
     }
 
-    //#endregion
 
-    //#region funciones recursivas de los 7 posibles casos ganadores
+    //funciones recursivas de los posibles casos ganadores
 
     function recuCol(x, y, player, lastFigureInserted, paintWinner) {
         //Estoy dentro del tablero?
