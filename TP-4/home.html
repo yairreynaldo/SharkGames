@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Interfaces TP2</title>
+</head>
+
+<body>
+
+    <!-- <div class="oscurecer ocultar"></div> -->
+
+    <div id="spinner">
+        <div class="loading-spin">
+            <span class="loader"><span class="loader-inner"></span></span>
+        </div>
+        <h3>Cargando...</h3>
+        <div class="numero-carga">0%</div>
+    </div>
+
+    <div class="contenido">
+
+        <header>
+            <div class="logYser">
+                <div class="logo">
+                    <a href="home.html"><img src="img/sharklogo.png" alt="" srcset=""></a>
+                    <h3>Shark <br> Games</h3>
+                </div>
+                <div class="search">
+                    <iconify-icon class="lupa" icon="ant-design:search-outlined" style="color: white;" width="30" height="30"></iconify-icon>
+                    <input type="search" name="" id="" placeholder="   Busca Juegos y mas...">
+                </div>
+            </div>
+            <div class="menus">
+                <h4>yair_18</h4>
+                <img class="fotoperfil" src="img/FOTO_DE_PERFIL_MARIO.png" alt="">
+                <iconify-icon class="carrito" icon="icons8:buy" width="30" height="30"></iconify-icon>
+                <!-- <iconify-icon class="burguer" id="bur" icon="ci:hamburger" width="30" height="30"></iconify-icon> -->
+                <div class="icon-burguer">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <main id="main">
+            <ul class="menu-burguer" id="menu-burguer">
+                <li class="menu-item" style="--ite:1">
+                    <h3>Accion</h3>
+                    <iconify-icon icon="akar-icons:fire" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <!-- <hr> -->
+                <li class="menu-item" style="--ite:2">
+                    <h3>Aventuras</h3>
+                    <iconify-icon icon="icons8:adventures" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <!-- <hr> -->
+                <li class="menu-item" style="--ite:3">
+                    <h3>Coches</h3>
+                    <iconify-icon icon="carbon:car" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <!-- <hr> -->
+                <li class="menu-item" style="--ite:4">
+                    <h3>Deportes</h3>
+                    <iconify-icon icon="fa-solid:basketball-ball" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <!-- <hr> -->
+                <li class="menu-item" style="--ite:5">
+                    <h3>Estrategia</h3>
+                    <iconify-icon icon="mdi:strategy" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <!-- <hr> -->
+                <li class="menu-item" style="--ite:6">
+                    <h3>Gratis</h3>
+                    <iconify-icon icon="emojione-monotone:free-button" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <!-- <hr> -->
+                <li class="menu-item" style="--ite:7">
+                    <h3>Multijugador</h3>
+                    <iconify-icon icon="bx:user" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <!-- <hr> -->
+                <li class="menu-item" style="--ite:8">
+                    <h3>Puzzle</h3>
+                    <iconify-icon icon="bi:puzzle" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <!-- <hr> -->
+                <li class="menu-item" style="--ite:9">
+                    <h3>Terror</h3>
+                    <iconify-icon icon="fluent-emoji-high-contrast:face-screaming-in-fear" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <!-- <hr> -->
+                <li class="menu-item" style="--ite:10">
+                    <h3>Tiros</h3>
+                    <iconify-icon icon="eos-icons:troubleshooting" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+            </ul>
+
+            <ul class="menu-perfil">
+                <li class="perfil-item">
+                    <h3>Mi Perfil</h3>
+                    <iconify-icon icon="bx:user" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="perfil-item">
+                    <h3>Pagos</h3>
+                    <iconify-icon icon="ant-design:credit-card-filled" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="perfil-item">
+                    <h3>Amigos</h3>
+                    <iconify-icon icon="bx:user" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="perfil-item">
+                    <h3>Ajustes</h3>
+                    <iconify-icon icon="ci:settings-filled" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="redes-item">
+                    <iconify-icon icon="akar-icons:instagram-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <iconify-icon icon="akar-icons:facebook-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <iconify-icon icon="akar-icons:twitter-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+                <hr>
+                <li class="perfil-item">
+                    <h3>LogOut</h3>
+                    <iconify-icon icon="carbon:logout" style="color: white;" width="30" height="30"></iconify-icon>
+                </li>
+            </ul>
+
+            <div class="cars">
+                <!-- <div class="carrusel"> -->
+                <h2>Recomendados:</h2>
+                <div class="itemCarrusel">
+                    <iconify-icon icon="bxs:right-arrow" class="pre-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                    <div class="card">
+                        <img src="img/logo-lord.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">Lord of Rings:Gollum</h4>
+                            <p>$99.99</p>
+                        </div>
+                        <a href="lanzamiento.html">
+                            <button class="btn-reservar">RESERVAR</button>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <img src="img/4_en_linea.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">4 en linea: F vs A</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <a href="4enlinea.html">
+                            <button class="btn-jugar">JUGAR</button>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <img src="img/valhalla.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">A.C:Valhalla</h4>
+                            <p>$79.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/Elden-ring.webp">
+                        <div class="descripcion">
+                            <h4 class="titulo">Elden Ring</h4>
+                            <p>$69.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/gran_turismo7.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Gran Turismo 7</h4>
+                            <p>$59.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/battlefield.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Battlefield 2042</h4>
+                            <p>$2999.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/cod-war.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">COD: WarZone</h4>
+                            <p>$999.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/spiderman.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Spider-Man</h4>
+                            <p>$599.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <iconify-icon icon="bxs:right-arrow" class="nxt-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                </div>
+                <!-- </div> -->
+                <!-- <div class="carrusel"> -->
+                <h2>Novedades:</h2>
+                <div class="itemCarrusel">
+                    <iconify-icon icon="bxs:right-arrow" class="pre-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                    <div class="card">
+                        <img src="img/fi23.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">FIFA 23</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/nb23.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">NBA 2K23</h4>
+                            <p>$89.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/logo-lord.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">Lord of Rings:Gollum</h4>
+                            <p>$99.99</p>
+                        </div>
+                        <a href="lanzamiento.html">
+                            <button class="btn-reservar">RESERVAR</button>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <img src="img/dy2.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">Dying Light 2</h4>
+                            <p>$69.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/f1-manager.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">F1 Manager 22</h4>
+                            <p>$99.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fi23.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">FIFA 23</h4>
+                            <p>$5000.00</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/resident-evil.webp">
+                        <div class="descripcion">
+                            <h4 class="titulo">Resident Evil: Village</h4>
+                            <p>$49.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/dragon-ballZ.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">DBZ: Kakarot</h4>
+                            <p>$99.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <iconify-icon icon="bxs:right-arrow" class="nxt-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                </div>
+                <!-- </div> -->
+                <!-- <div class="carrusel"> -->
+                <h2>Gratuitos:</h2>
+                <div class="itemCarrusel">
+                    <iconify-icon icon="bxs:right-arrow" class="pre-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                    <div class="card">
+                        <img src="img/4_en_linea.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">4 en linea: F vs A</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <a href="4enlinea.html">
+                            <button class="btn-jugar">JUGAR</button>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <img src="img/pubg.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Pubg</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fortnite.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Fortnite</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/smite.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">Smite</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/cod-war.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">COD: WarZone</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/worldoftanks.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">World of Tanks</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/ciberpunk.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Ciberpunk 2077</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/genshin.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Genshin Impact</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <iconify-icon icon="bxs:right-arrow" class="nxt-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                </div>
+                <!-- </div> -->
+                <!-- <div class="carrusel"> -->
+                <h2>Tendencias:</h2>
+                <div class="itemCarrusel">
+                    <iconify-icon icon="bxs:right-arrow" class="pre-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                    <div class="card">
+                        <img src="img/godOfWar.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">GOW: Ragnarok</h4>
+                            <p>$99.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/gta.webp">
+                        <div class="descripcion">
+                            <h4 class="titulo">GTA V</h4>
+                            <p>$29.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fi23.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">FIFA 23</h4>
+                            <p>$5000.00</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fallg.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">Fall Guys</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/mine.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">Minecraft</h4>
+                            <p>$3899.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/fortnite.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Fortnite</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/Elden-ring.webp">
+                        <div class="descripcion">
+                            <h4 class="titulo">Elden Ring</h4>
+                            <p>$69.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/spiderman.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Spider-Man</h4>
+                            <p>$599.99</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <iconify-icon icon="bxs:right-arrow" class="nxt-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                </div>
+                <!-- </div> -->
+                <!-- <div class="carrusel"> -->
+                <h2>Ultimos jugados:</h2>
+                <div class="itemCarrusel">
+                    <iconify-icon icon="bxs:right-arrow" class="pre-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                    <div class="card">
+                        <img src="img/fi23.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">FIFA 23</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-comprar">COMPRAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/4_en_linea.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">4 en linea: F vs A</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/CSGO.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">CS:GO</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/among.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">Among us</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/warships.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">World Warships</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/dota2.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">Dota 2</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/league.jpg">
+                        <div class="descripcion">
+                            <h4 class="titulo">LOL</h4>
+                            <p>Comprado</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <div class="card">
+                        <img src="img/cod-war.png">
+                        <div class="descripcion">
+                            <h4 class="titulo">COD: WarZone</h4>
+                            <p>Gratis</p>
+                        </div>
+                        <button class="btn-jugar">JUGAR</button>
+                    </div>
+                    <iconify-icon icon="bxs:right-arrow" class="nxt-btn" style="color: black;" width="40" height="40"></iconify-icon>
+                </div>
+                <!-- </div> -->
+            </div>
+        </main>
+        <footer>
+            <div class="redes">
+                <div class="redes-item-footer">
+                    <img src="img/sharklogo.png" alt="" srcset="">
+                    <h3>SharkGames.com</h3>
+                </div>
+                <div class="redes-item-footer">
+                    <iconify-icon icon="akar-icons:instagram-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <h3>Instagram</h3>
+                </div>
+                <div class="redes-item-footer">
+                    <iconify-icon icon="akar-icons:facebook-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <h3>Facebook</h3>
+                </div>
+                <div class="redes-item-footer">
+                    <iconify-icon icon="akar-icons:twitter-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                    <h3>Twitter</h3>
+                </div>
+                <div class="copir">
+                    <p>Copyright © 2022 SHARK GAMES Todos los derechos reservados.</p>
+                </div>
+            </div>
+            <div class="informacion">
+                <div class="info-item">
+                    <h3>INFORMACION</h3>
+                    <p>Condiciondes de uso</p>
+                    <p>Politicas de Privacidad</p>
+                    <p>Informacion para Padres</p>
+                    <p>Cookies</p>
+                </div>
+                <div class="info-item">
+                    <h3>ASISTENCIA</h3>
+                    <p>Ayuda</p>
+                    <p>FAQ</p>
+                </div>
+                <div class="info-item">
+                    <h3>NOSOTROS</h3>
+                    <p>Acerca de</p>
+                    <p>Desarrolladores</p>
+                    <p>Empleo</p>
+                    <p>Contacto</p>
+                </div>
+                <div class="info-item">
+                    <h3>IDIOMAS</h3>
+                    <p>Español</p>
+                    <p>English</p>
+                    <p>Deutsch</p>
+                    <p>Italiano</p>
+                    <p>Français</p>
+                    <p>Polski</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+</body>
+
+</html>
