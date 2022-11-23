@@ -565,13 +565,64 @@ h1 {
     text-align: center;
 }
 
+.cont-sprite {
+    display: flex;
+    justify-content: center;
+    /* padding-bottom: 100px; */
+}
+
 .sprite {
     display: inline-block;
-    background: url(img/spriteMago.png) no-repeat;
-    width: 30px;
-    height: 30px;
+    background: url(../img/imgSprFinal.png) no-repeat;
+    width: 132px;
+    height: 285px;
     background-position: 0px 0;
+    animation: move 1s steps(6) infinite;
+    /* border: solid 1px black; */
 }
+
+@keyframes move {
+    to {
+        background-position: -660px 0px;
+    }
+}
+
+@keyframes move3 {
+    0% {
+        width: 142px;
+        background-position: 0px 0px;
+    }
+    50% {
+        width: 141px;
+        background-position: -141px 0px;
+    }
+    100% {
+        width: 132px;
+        background-position: -273px 0px;
+    }
+}
+
+
+/* @keyframes move2 {
+    0% {
+        background-position: -270px 0;
+    }
+    20% {
+        background-position: 0 -295px;
+    }
+    40% {
+        background-position: -540px -295px;
+    }
+    60% {
+        background-position: -405px 0;
+    }
+    80% {
+        background-position: -270px -590px;
+    }
+    100% {
+        background-position: -405px -295px;
+    }
+} */
 
 
 /* footer{
