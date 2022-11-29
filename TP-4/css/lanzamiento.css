@@ -341,42 +341,106 @@ header.abajo {
     cursor: pointer;
 }
 
+/* SECCION HERO */
+
+@keyframes scroll{
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: -1920px;
+    }
+}
+
 .imgs-lanz {
     height: 560px;
 }
 
-.img-grande {
+.layer{
     width: 100%;
-    height: 560px;
-    position: relative;
+    height: 100%;
+    position: absolute;
+    top: 51;
+    left: 0;
+    background-repeat: repeat-x;
+    background-size: cover;
 }
 
+.parallax-0{
+    background-image: url('../img/fire.jpg');
+    animation: scroll 15s infinite linear;
+}
+
+.parallax-1{
+    background-image: url('../img/ojoFuego.png');
+    animation: scroll 10s infinite linear;
+    width: 100%;
+    height: 300px;
+}
+
+.parallax-2{
+    width: 100%;
+    height: 350px;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.parallax-3{
+    background-image: url('../img/volcan.jpg');
+    position: absolute;
+    animation: scroll 8s infinite ease-in;
+}
+
+.parallax-4{
+    position: absolute;
+    padding-top: 100px;
+}
+
+.title-parallax{
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+/*
+.volcan{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.img-grande {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+}
+
+.smoke{
+    height: 200px;
+    background-repeat: repeat-x;
+    background-size: cover;
+} */
+
+/*
+
 .img-chica {
-    top: 280px;
+    top: 320px;
     bottom: 0px;
     width: 700px;
     height: 330px;
     right: 0;
     position: absolute;
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: scroll 5s infinite linear;
     /* opacity: .3; */
-    /* filter: brightness(20%); */
-}
-
-.img-chica-2 {
-    top: 52px;
-    right: 150px;
-    position: absolute;
-    width: 480px;
-    height: 204px;
-    /* opacity: .6; */
-    filter: brightness(50%);
-    filter: contrast(100%);
-}
+    /* filter: brightness(20%); */ /*
+} */
 
 .img-titulo {
-    position: relative;
+    position: absolute;
     bottom: 150px;
-    left: 45%;
+    left: 40%;
     width: 400px;
     /* z-index: 200; */
     /* margin: 0 auto; */
@@ -428,45 +492,73 @@ header.abajo {
     transition: 0.5s;
 }
 
-.container-info {
-    display: flex;
-    flex-direction: column;
-    gap: 200px;
-}
-
 .descrip h4 {
     position: relative;
     right: 60px;
 }
 
+/* SECCION HISTORIA */
+
 .historia {
-    height: 400px;
     margin: 50px 200px;
 }
 
-.historia .title {
-    margin: 10px 10px;
-}
-
 .historia .title h1 {
-    text-align: start;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.imgtext {
-    display: grid;
-    grid-template-columns: 60% auto;
-    height: 345px;
+.info-history{
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    top: -90px;
+    position: relative;
 }
 
-.imgtext .text {
-    padding-left: 10px;
-    background-color: rgba(217, 217, 217, 0.2);
+.info-history .left-div{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 5%;
+    z-index: 3;
 }
 
-.text p {
-    padding-top: 25px;
+.card-content{
+    width: 100%;
+    height: 400px;
+    top: 250px;
+    position: sticky;
+    display: none;
 }
 
+.info-history .left-div .card-content img{
+    width: 500px;
+    height: 320px; 
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-history .left-div .card-content{
+    width: 500px;
+    height: 320px; 
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.from-left{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(-150%);
+}
+
+/*
 .imgtext .imagenes {
     margin-left: 20px;
     display: block;
@@ -474,22 +566,109 @@ header.abajo {
 }
 
 .imagenes img {
-    width: 302px;
-    height: 210px;
+    width: 400px;
+    height: 400px;
     padding-left: 15px;
-    border-radius: 30px;
+    border-radius: 50px;
+} */
+
+.info-history .right-div{
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    width: 50%;
+    overflow: hidden;
 }
 
-h1 {
-    text-transform: uppercase;
+.info-history .right-div .text-content{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 10%;
+    height: 400px;    
+}
+
+.from-right{
+    color: #ECECEC;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 150%;
+    margin-top: 180px;
+    transform: translateX(150%); 
     text-align: center;
 }
+
+.from-left, .from-right{
+    transition: transform 400ms ease-in;
+}
+
+.from-left.appear, .from-right.appear{
+    transform: translateX(0);
+}
+
+.fade-in{
+    animation: fadeOut-content ease 0.9s forwards;
+}
+
+.fade-in.appear{
+    animation: fadeIn-content ease 0.9s forwards;
+}
+
+.showCard{
+    display: block;
+}
+
+@keyframes fadeIn-content {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+@keyframes fadeOut-content {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.slide-up{
+    transform: translateY(150px);
+    transition: transform 0.5s ease-in;
+    animation: ease 0.9s fadeOut-content forwards;
+}
+
+.slide-up.appear{
+    transform: translateY(0);
+    transition: transform 0.5s ease-in;
+    animation: ease 0.9s fadeIn-content forwards;
+}
+
+/* SECCION CARDS */
 
 .features-game {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 100px;
+}
+
+.features-game h1{
+    padding-top: 50px;
+
+    opacity: 0;
+    transform: scale(0.3) translateX(-1200px);
+    transition: .9s ease-in-out all;
+}
+
+.features-game h1.visible{
+    opacity: 1;
+    transform: scale(1) translateX(0);
 }
 
 .jugabilidad {
@@ -501,8 +680,16 @@ h1 {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+
+    opacity: 0;
+    transform: scale(0.3) translateX(-1200px);
+    transition: .9s ease-in-out all;
 }
 
+.jugabilidad.visible{
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
 
 /* .title h2 {
     padding-left: 150px;
