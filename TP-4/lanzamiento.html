@@ -19,7 +19,7 @@
     <header>
         <div class="logYser">
             <div class="logo">
-                <a href="home.html"><img src="img/sharklogo.png" alt="" srcset=""></a>
+                <a href="home.html"><img src="img/sharklogo.png" alt="" srcset="" class="imgLogo"></a>
                 <h3>Shark <br> Games</h3>
             </div>
             <div class="search">
@@ -94,42 +94,42 @@
         </ul>
 
         <ul class="menu-perfil ">
-            <li class="perfil-item ">
+            <li class="perfil-item">
                 <h3>Mi Perfil</h3>
-                <iconify-icon icon="bx:user " style="color: white; " width="30 " height="30 "></iconify-icon>
+                <iconify-icon icon="bx:user" style="color: white;" width="30" height="30"></iconify-icon>
             </li>
             <hr>
-            <li class="perfil-item ">
+            <li class="perfil-item">
                 <h3>Pagos</h3>
-                <iconify-icon icon="ant-design:credit-card-filled " style="color: white; " width="30 " height="30 "></iconify-icon>
+                <iconify-icon icon="ant-design:credit-card-filled" style="color: white;" width="30" height="30"></iconify-icon>
             </li>
             <hr>
-            <li class="perfil-item ">
+            <li class="perfil-item">
                 <h3>Amigos</h3>
-                <iconify-icon icon="bx:user " style="color: white; " width="30 " height="30 "></iconify-icon>
+                <iconify-icon icon="bx:user" style="color: white;" width="30" height="30"></iconify-icon>
             </li>
             <hr>
-            <li class="perfil-item ">
+            <li class="perfil-item">
                 <h3>Ajustes</h3>
-                <iconify-icon icon="ci:settings-filled " style="color: white; " width="30 " height="30 "></iconify-icon>
+                <iconify-icon icon="ci:settings-filled" style="color: white;" width="30" height="30"></iconify-icon>
             </li>
             <hr>
             <li class="redes-item ">
-                <iconify-icon icon="akar-icons:instagram-fill " style="color: white; " width="30 " height="30 "></iconify-icon>
-                <iconify-icon icon="akar-icons:facebook-fill " style="color: white; " width="30 " height="30 "></iconify-icon>
-                <iconify-icon icon="akar-icons:twitter-fill " style="color: white; " width="30 " height="30 "></iconify-icon>
+                <iconify-icon icon="akar-icons:instagram-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                <iconify-icon icon="akar-icons:facebook-fill" style="color: white;" width="30" height="30"></iconify-icon>
+                <iconify-icon icon="akar-icons:twitter-fill" style="color: white;" width="30" height="30"></iconify-icon>
             </li>
             <hr>
-            <li class="perfil-item ">
+            <li class="perfil-item">
                 <h3>LogOut</h3>
-                <iconify-icon icon="carbon:logout " style="color: white; " width="30 " height="30 "></iconify-icon>
+                <iconify-icon icon="carbon:logout" style="color: white;" width="30" height="30"></iconify-icon>
             </li>
         </ul>
 
         <div class="imgs-lanz ">
             <img class="img-grande " src="img/tlor3.png " alt=" ">
-            <img class="img-chica " src="img/gollum_4_1.png " alt=" ">
-            <img class="img-chica-2 " src="img/goll-lanz.png " alt=" ">
+            <!-- <img class="img-chica " src="img/gollum_4_1.png " alt=" ">
+            <img class="img-chica-2 " src="img/goll-lanz.png " alt=" "> -->
             <div class="img-titulo ">
                 <h2>Proximamente</h2>
                 <button type="button " class="btn-click ">Reservar</button>
@@ -216,11 +216,12 @@
             </div>
 
             <div class="caja-personajes ">
-                <h1>Personajes</h1>
+                <h1 id="titulo-personajes">Personajes</h1>
 
                 <div class="carrusel ">
                     <div class="carrusel-items ">
-                        <div class="carrusel-item ">
+                        <iconify-icon class="btn-atr" icon="material-symbols:arrow-forward-ios-rounded" width="30" height="30"></iconify-icon>
+                        <div class="carrusel-item first ">
                             <img src="img/gollum-personaje.png " alt=" " />
                             <p>GOLLUM.<br>Vigoroso y agil, sigiloso y astuto. Puede hacer parkour y treparse de lugares impensados, pero tiene un problema, su personalidad.</p>
                         </div>
@@ -237,21 +238,22 @@
                             <p>THRANDUIL.<br>El rey de los elfos silvanos y un personaje de los mas importantes de la Tierra media.</p>
                         </div>
                         <div class="carrusel-item ">
-                            <img src="img/gollum-personaje.png " alt=" " />
-                            <p>GOLLUM.<br>Vigoroso y agil, sigiloso y astuto. Puede hacer parkour y treparse de lugares impensados, pero tiene un problema, su personalidad.</p>
+                            <img src="img/galadF.png " alt=" " />
+                            <p>GALADRIEL.<br>posee muchos poderes mágicos como, poder de comunicarse a lo largo de grandes distancias, predecir el futuro, e incluso ocultar su mente de seres poderosos.</p>
                         </div>
                         <div class="carrusel-item ">
-                            <img src="img/mago.jpg " alt=" " />
-                            <p>GANDALF EL GRIS.<br>Temerario mago y una de las personalidades mas relevantes de la Tierra media.</p>
+                            <img src="img/legolas.png " alt=" " />
+                            <p>LEGOLAS.<br>Es un elfo con pelo rubio, siempre carga su arco y unos cuchillos élficos, es un gran cazador no un guerrero.</p>
                         </div>
                         <div class="carrusel-item ">
-                            <img src="img/sauron.jpg " alt=" " />
-                            <p>LA BOCA DE SAURON.<br>Es quien desde desde Barad-dûr inicio su propia busqueda del anillo de Poder.</p>
+                            <img src="img/boromir.png " alt=" " />
+                            <p>BOROMIR.<br>De los mejores capitanes de Gondor, portaba un cuerno del que se decía que su sonido atemorizaba a los enemigos, destaca por su fuerza y animo.</p>
                         </div>
-                        <div class="carrusel-item ">
-                            <img src="img/thrandu.png " alt=" " />
-                            <p>THRANDUIL.<br>El rey de los elfos silvanos y un personaje de los mas importantes de la Tierra media.</p>
+                        <div class="carrusel-item last ">
+                            <img src="img/gimil.png " alt=" " />
+                            <p>GIMLI.<br> Enano muy respetado en la Tierra Media, conocido por su habilidad con el hacha, utilizado hachas para lanzar a distancia, Estas hachas tenian mucho daño.</p>
                         </div>
+                        <iconify-icon class="btn-sig" icon="material-symbols:arrow-forward-ios-rounded" width="30" height="30"></iconify-icon>
                     </div>
                 </div>
                 <div class="cont-sprite">

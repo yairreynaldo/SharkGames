@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     main.addEventListener("click", (e) => {
         if (menu.classList.contains("burguer-active")) {
+            iconBurguer.classList.remove("active");
             for (let i = 0; i < menuItem.length; i++) {
                 let item = menuItem[i];
                 /* console.log(item); */
