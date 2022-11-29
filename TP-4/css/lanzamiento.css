@@ -18,6 +18,12 @@ main {
     /* visibility: hidden; */
 }
 
+.cont {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
 header {
     background-color: #191721;
     display: flex;
@@ -341,9 +347,10 @@ header.abajo {
     cursor: pointer;
 }
 
+
 /* SECCION HERO */
 
-@keyframes scroll{
+@keyframes scroll {
     0% {
         background-position-x: 0px;
     }
@@ -356,7 +363,7 @@ header.abajo {
     height: 560px;
 }
 
-.layer{
+.layer {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -366,41 +373,75 @@ header.abajo {
     background-size: cover;
 }
 
-.parallax-0{
+.parallax-0 {
     background-image: url('../img/fire.jpg');
     animation: scroll 15s infinite linear;
 }
 
-.parallax-1{
+.parallax-1 {
     background-image: url('../img/ojoFuego.png');
     animation: scroll 10s infinite linear;
     width: 100%;
     height: 300px;
 }
 
-.parallax-2{
-    width: 100%;
+.parallax-2 {
+    width: 800px;
     height: 350px;
     bottom: 10%;
     display: flex;
     justify-content: center;
+    position: absolute;
+    z-index: 80;
+    left: 20%;
 }
 
-.parallax-3{
+.img-gollum {
+    position: absolute;
+    transition: .5s;
+    width: 200px;
+    height: 250px;
+}
+
+.parallax-3 {
     background-image: url('../img/volcan.jpg');
     position: absolute;
-    animation: scroll 8s infinite ease-in;
+    /* animation: scroll 8s infinite ease-in; */
+    background-position: -600px;
 }
 
-.parallax-4{
+.parallax-4 {
+    background-image: url('../img/title3.png');
     position: absolute;
     padding-top: 100px;
+    top: 51;
+    left: 0;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    width: 600px;
+    height: 300px;
 }
 
-.title-parallax{
+.titlePara {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 600px;
+    height: 300px;
+    transition: 1s;
+}
+
+.titleParaScroll {
+    opacity: 0;
+    transition: 1s;
+}
+
+
+/* .title-parallax {
     font-size: 50px;
     text-transform: uppercase;
-}
+} */
+
 
 /*
 .volcan{
@@ -421,6 +462,7 @@ header.abajo {
     background-size: cover;
 } */
 
+
 /*
 
 .img-chica {
@@ -434,14 +476,19 @@ header.abajo {
     background-size: cover;
     animation: scroll 5s infinite linear;
     /* opacity: .3; */
-    /* filter: brightness(20%); */ /*
+
+
+/* filter: brightness(20%); */
+
+
+/*
 } */
 
 .img-titulo {
     position: absolute;
-    bottom: 150px;
-    left: 40%;
-    width: 400px;
+    bottom: 10px;
+    left: 80%;
+    width: 200px;
     /* z-index: 200; */
     /* margin: 0 auto; */
 }
@@ -497,6 +544,7 @@ header.abajo {
     right: 60px;
 }
 
+
 /* SECCION HISTORIA */
 
 .historia {
@@ -508,7 +556,7 @@ header.abajo {
     text-transform: uppercase;
 }
 
-.info-history{
+.info-history {
     padding-top: 80px;
     display: flex;
     flex-direction: row;
@@ -517,7 +565,7 @@ header.abajo {
     position: relative;
 }
 
-.info-history .left-div{
+.info-history .left-div {
     display: flex;
     flex-direction: column;
     width: 40%;
@@ -525,7 +573,7 @@ header.abajo {
     z-index: 3;
 }
 
-.card-content{
+.card-content {
     width: 100%;
     height: 400px;
     top: 250px;
@@ -533,30 +581,31 @@ header.abajo {
     display: none;
 }
 
-.info-history .left-div .card-content img{
+.info-history .left-div .card-content img {
     width: 500px;
-    height: 320px; 
+    height: 320px;
     z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.info-history .left-div .card-content{
+.info-history .left-div .card-content {
     width: 500px;
-    height: 320px; 
+    height: 320px;
     z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.from-left{
+.from-left {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transform: translateX(-150%);
 }
+
 
 /*
 .imgtext .imagenes {
@@ -572,7 +621,7 @@ header.abajo {
     border-radius: 50px;
 } */
 
-.info-history .right-div{
+.info-history .right-div {
     display: flex;
     flex-direction: column;
     z-index: 2;
@@ -580,74 +629,77 @@ header.abajo {
     overflow: hidden;
 }
 
-.info-history .right-div .text-content{
+.info-history .right-div .text-content {
     display: flex;
     justify-content: center;
     width: 80%;
     margin: 0 10%;
-    height: 400px;    
+    height: 400px;
 }
 
-.from-right{
+.from-right {
     color: #ECECEC;
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
     line-height: 150%;
     margin-top: 180px;
-    transform: translateX(150%); 
+    transform: translateX(150%);
     text-align: center;
 }
 
-.from-left, .from-right{
+.from-left,
+.from-right {
     transition: transform 400ms ease-in;
 }
 
-.from-left.appear, .from-right.appear{
+.from-left.appear,
+.from-right.appear {
     transform: translateX(0);
 }
 
-.fade-in{
+.fade-in {
     animation: fadeOut-content ease 0.9s forwards;
 }
 
-.fade-in.appear{
+.fade-in.appear {
     animation: fadeIn-content ease 0.9s forwards;
 }
 
-.showCard{
+.showCard {
     display: block;
 }
 
 @keyframes fadeIn-content {
-    0%{
-      opacity: 0;
+    0% {
+        opacity: 0;
     }
-    100%{
-      opacity: 1;
-    }
-  }
-
-@keyframes fadeOut-content {
-    0%{
+    100% {
         opacity: 1;
     }
-    100%{
+}
+
+@keyframes fadeOut-content {
+    0% {
+        opacity: 1;
+    }
+    100% {
         opacity: 0;
     }
 }
 
-.slide-up{
+.slide-up {
     transform: translateY(150px);
     transition: transform 0.5s ease-in;
     animation: ease 0.9s fadeOut-content forwards;
 }
 
-.slide-up.appear{
+.slide-up.appear {
     transform: translateY(0);
     transition: transform 0.5s ease-in;
     animation: ease 0.9s fadeIn-content forwards;
 }
+
 
 /* SECCION CARDS */
 
@@ -658,15 +710,14 @@ header.abajo {
     gap: 100px;
 }
 
-.features-game h1{
+.features-game h1 {
     padding-top: 50px;
-
     opacity: 0;
     transform: scale(0.3) translateX(-1200px);
     transition: .9s ease-in-out all;
 }
 
-.features-game h1.visible{
+.features-game h1.visible {
     opacity: 1;
     transform: scale(1) translateX(0);
 }
@@ -680,16 +731,16 @@ header.abajo {
     flex-direction: column;
     gap: 20px;
     align-items: center;
-
     opacity: 0;
     transform: scale(0.3) translateX(-1200px);
     transition: .9s ease-in-out all;
 }
 
-.jugabilidad.visible{
+.jugabilidad.visible {
     opacity: 1;
     transform: scale(1) translateX(0);
 }
+
 
 /* .title h2 {
     padding-left: 150px;
@@ -860,7 +911,7 @@ header.abajo {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
 }
 
 .caja-personajes h1 {

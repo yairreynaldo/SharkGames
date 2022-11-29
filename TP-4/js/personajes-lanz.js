@@ -1,3 +1,4 @@
+//carousel animacion
 const carrusel = document.querySelector(".carrusel-items");
 const btnNxt = document.querySelector(".btn-sig");
 const btnAtr = document.querySelector(".btn-atr");
@@ -26,7 +27,7 @@ btnAtr.addEventListener('click', () => {
 })
 
 
-
+//personajes animacion titulo
 let titulo = document.querySelector("#titulo-personajes");
 let tarjetapj = document.querySelectorAll(".carrusel-item");
 titulo.style.opacity = 0.1;
@@ -84,11 +85,13 @@ window.addEventListener("scroll", function() {
 
 })
 
+//header scroll
 let header = document.querySelector("header");
 let logoTit = document.querySelector(".logo h3");
 let logoCont = document.querySelector(".logo");
 let search = document.querySelector(".search");
 let logoShark = document.querySelector(".imgLogo");
+let titlePara = document.querySelector(".titlePara");
 /* let burguerScroll = document.querySelector(".menu-burguer .burguer-active"); */
 window.addEventListener("scroll", function() {
     header.classList.toggle("abajo", this.window.scrollY > 0);
@@ -96,7 +99,38 @@ window.addEventListener("scroll", function() {
     logoCont.classList.toggle("logoScroll", this.window.scrollY > 0);
     search.classList.toggle("searchScroll", this.window.scrollY > 0);
     logoShark.classList.toggle("logoImgScroll", this.window.scrollY > 0);
+    titlePara.classList.toggle("titleParaScroll", this.window.scrollY > 0);
 })
+
+
+//movimiento gollum parallax
+let contGol = document.querySelector(".parallax-2");
+let gollum = document.querySelector(".img-gollum");
+
+contGol.addEventListener('mouseover', (event) => {
+    contGol.addEventListener('mousemove', (event) => {
+        let mousePos = getMousePos(event);
+        let pos = mousePos.x;
+        /* console.log(pos); */
+        if (pos > 400) {
+            gollum.style.transform = `translateX(-${pos-300}px)`;
+        } else {
+            gollum.style.transform = `translateX(${pos}px)`;
+        }
+    })
+})
+
+contGol.addEventListener('mouseleave', (event) => {
+    gollum.style.transform = `translateX(0px)`;
+})
+
+function getMousePos(event) {
+    let ClientRect = contGol.getBoundingClientRect();
+    return { //objeto
+        x: Math.round(event.clientX - ClientRect.left), //canvas.offsetLeft
+        y: Math.round(event.clientY - ClientRect.top) //canvas.offsetTop
+    }
+}
 
 
 
